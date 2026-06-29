@@ -3,128 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M. Prithivraj | Junior DevOps Engineer</title>
+    <title>M. Prithivraj | DevOps Infrastructure Engineer</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
         body {
-            background-color: #0b0f19;
-            font-family: 'Inter', sans-serif;
+            background-color: #030712;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .glow-card {
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.7) 0%, rgba(31, 41, 55, 0.4) 100%);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(56, 189, 248, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glow-card:hover {
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.15);
+            transform: translateY(-2px);
         }
     </style>
 </head>
-<body class="text-slate-200 antialiased selection:bg-sky-500 selection:text-white min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+<body class="text-slate-100 antialiased min-h-screen selection:bg-sky-500/30 selection:text-sky-300 py-16 px-4">
 
-    <div class="max-w-4xl mx-auto space-y-10">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] pointer-events-none opacity-20 blur-[150px] bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-500 rounded-full -z-10"></div>
+
+    <div class="max-w-4xl mx-auto space-y-12">
         
-        <header class="text-center space-y-4 py-6 border-b border-slate-800/60">
-            <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-medium text-sky-400 bg-sky-500/10 rounded-full ring-1 ring-inset ring-sky-500/20">
-                <span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span> Available for Opportunities
-            </div>
-            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
-                M. PRITHIVRAJ
-            </h1>
-            <p class="text-xl font-semibold text-sky-400 tracking-wide uppercase text-sm">
-                Junior DevOps Engineer
-            </p>
-            <p class="text-slate-400 max-w-lg mx-auto text-sm sm:text-base">
-                <i class="fa-solid fa-location-dot text-sky-500 mr-1"></i> Chennai, India
-            </p>
+        <header class="glow-card p-8 rounded-3xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-sky-500/10 rounded-bl-full pointer-events-none"></div>
             
-            <div class="flex flex-wrap justify-center gap-4 pt-3 text-sm">
-                <a href="mailto:prithiv6380407352@gmail.com" class="flex items-center gap-2 px-4 py-2 bg-slate-900 border border-slate-800 rounded-lg hover:border-sky-500 hover:text-sky-400 transition-all duration-300">
-                    <i class="fa-regular fa-envelope"></i> Email Me
-                </a>
-                <a href="#" class="flex items-center gap-2 px-4 py-2 bg-slate-900 border border-slate-800 rounded-lg hover:border-sky-500 hover:text-sky-400 transition-all duration-300">
-                    <i class="fa-brands fa-linkedin"></i> LinkedIn
-                </a>
-                <a href="#" class="flex items-center gap-2 px-4 py-2 bg-slate-900 border border-slate-800 rounded-lg hover:border-sky-500 hover:text-sky-400 transition-all duration-300">
-                    <i class="fa-brands fa-github"></i> GitHub
-                </a>
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                <div class="space-y-3">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold text-emerald-400 bg-emerald-500/10 rounded-full border border-emerald-500/20">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Active Pipeline Live
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl font-black tracking-tight text-white">
+                        M. PRITHIVRAJ
+                    </h1>
+                    <p class="text-lg font-bold code-font text-sky-400 tracking-wider">
+                        &gt;_ JUNIOR DEVOPS ENGINEER
+                    </p>
+                    <p class="text-slate-400 text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-map-pin text-sky-400"></i> Chennai, India • Cloud Automation Specialist
+                    </p>
+                </div>
+                
+                <div class="flex flex-col w-full md:w-auto gap-3 text-sm">
+                    <button onclick="navigator.clipboard.writeText('prithiv6380407352@gmail.com'); alert('Email copied!');" class="w-full justify-center flex items-center gap-2 px-5 py-3 bg-sky-500 hover:bg-sky-600 text-slate-950 font-bold rounded-xl transition-all cursor-pointer shadow-lg shadow-sky-500/20">
+                        <i class="fa-solid fa-copy"></i> Copy Email ID
+                    </button>
+                    <div class="flex gap-2">
+                        <a href="#" class="flex-1 text-center flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-900/90 border border-slate-800 rounded-xl hover:border-slate-700 hover:bg-slate-800/80 transition-all">
+                            <i class="fa-brands fa-linkedin text-sky-400"></i> LinkedIn
+                        </a>
+                        <a href="#" class="flex-1 text-center flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-900/90 border border-slate-800 rounded-xl hover:border-slate-700 hover:bg-slate-800/80 transition-all">
+                            <i class="fa-brands fa-github text-slate-400"></i> GitHub
+                        </a>
+                    </div>
+                </div>
             </div>
         </header>
 
-        <section class="bg-slate-900/40 backdrop-blur-md border border-slate-800/80 p-6 sm:p-8 rounded-2xl shadow-xl space-y-3">
-            <h2 class="text-xl font-bold text-white flex items-center gap-2">
-                <i class="fa-solid fa-rocket text-sky-400"></i> Profile Summary
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <div class="glow-card p-5 rounded-2xl text-center">
+                <span class="block text-3xl font-extrabold text-white code-font">1+</span>
+                <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Years Experience</span>
+            </div>
+            <div class="glow-card p-5 rounded-2xl text-center">
+                <span class="block text-3xl font-extrabold text-sky-400 code-font">10+</span>
+                <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">AWS Services Mastered</span>
+            </div>
+            <div class="glow-card p-5 rounded-2xl text-center col-span-2 sm:col-span-1">
+                <span class="block text-3xl font-extrabold text-emerald-400 code-font">99.9%</span>
+                <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Uptime Focused</span>
+            </div>
+        </div>
+
+        <section class="glow-card p-6 sm:p-8 rounded-3xl space-y-4">
+            <h2 class="text-xl font-bold text-white flex items-center gap-2.5">
+                <i class="fa-solid fa-terminal text-sky-400 text-lg"></i> Profile Summary
             </h2>
-            <p class="text-slate-400 leading-relaxed text-sm sm:text-base">
-                Result-driven Junior DevOps Engineer with 1 year of hands-on experience in automating, deploying, and managing cloud infrastructure. Strong expertise in the <span class="text-slate-200 font-medium">AWS ecosystem</span>, containerized applications via <span class="text-slate-200 font-medium">Amazon ECS/ECR</span>, and setting up robust <span class="text-slate-200 font-medium">CI/CD pipelines</span> using Jenkins and Bitbucket.
+            <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                Result-driven Systems Professional specializing in automating infrastructure delivery. Expert at translating continuous integration mandates into highly available deployments inside the <span class="text-white font-medium">AWS Platform</span>. Highly effective at configuring containerized application workflows (<span class="text-white font-medium">ECS/ECR</span>) and managing multi-channel domain mappings smoothly.
             </p>
         </section>
 
-        <section class="bg-slate-900/40 backdrop-blur-md border border-slate-800/80 p-6 sm:p-8 rounded-2xl shadow-xl space-y-6">
-            <h2 class="text-xl font-bold text-white flex items-center gap-2">
-                <i class="fa-solid fa-code-branch text-sky-400"></i> Technical Stack
+        <section class="glow-card p-6 sm:p-8 rounded-3xl space-y-6">
+            <h2 class="text-xl font-bold text-white flex items-center gap-2.5">
+                <i class="fa-solid fa-cubes text-sky-400 text-lg"></i> Tooling Ecosystem
             </h2>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div class="p-4 bg-slate-900/80 border border-slate-800 rounded-xl space-y-2">
-                    <span class="text-xs font-bold uppercase tracking-wider text-sky-400 block">Cloud Platforms</span>
-                    <p class="text-sm text-slate-300 font-mono">AWS (EC2, S3, CloudFront, Lambda, Route 53, IAM)</p>
+                <div class="p-4 bg-slate-950/60 border border-slate-800/60 rounded-xl space-y-3">
+                    <div class="flex items-center gap-2 text-sky-400"><i class="devicon-amazonwebservices-wordmark colored text-2xl"></i> <span class="text-xs font-bold uppercase tracking-wider text-slate-300">Cloud Core</span></div>
+                    <p class="text-xs text-slate-400 code-font">EC2, S3, CloudFront, Lambda, Route 53, IAM, CloudWatch, SNS</p>
                 </div>
-                <div class="p-4 bg-slate-900/80 border border-slate-800 rounded-xl space-y-2">
-                    <span class="text-xs font-bold uppercase tracking-wider text-sky-400 block">CI/CD & Source Control</span>
-                    <p class="text-sm text-slate-300 font-mono">Jenkins, Bitbucket</p>
+                <div class="p-4 bg-slate-950/60 border border-slate-800/60 rounded-xl space-y-3">
+                    <div class="flex items-center gap-2 text-sky-400"><i class="devicon-jenkins-line colored text-2xl"></i> <span class="text-xs font-bold uppercase tracking-wider text-slate-300">CI/CD & Source</span></div>
+                    <p class="text-xs text-slate-400 code-font">Jenkins Automation Engine, Bitbucket Repositories</p>
                 </div>
-                <div class="p-4 bg-slate-900/80 border border-slate-800 rounded-xl space-y-2">
-                    <span class="text-xs font-bold uppercase tracking-wider text-sky-400 block">Containers & Orchestration</span>
-                    <p class="text-sm text-slate-300 font-mono">AWS ECR, AWS ECS</p>
+                <div class="p-4 bg-slate-950/60 border border-slate-800/60 rounded-xl space-y-3">
+                    <div class="flex items-center gap-2 text-sky-400"><i class="devicon-docker-plain colored text-2xl"></i> <span class="text-xs font-bold uppercase tracking-wider text-slate-300">Containerization</span></div>
+                    <p class="text-xs text-slate-400 code-font">Amazon Elastic Container Service (ECS), Amazon Elastic Container Registry (ECR)</p>
                 </div>
-                <div class="p-4 bg-slate-900/80 border border-slate-800 rounded-xl space-y-2">
-                    <span class="text-xs font-bold uppercase tracking-wider text-sky-400 block">Domain & DNS Operations</span>
-                    <p class="text-sm text-slate-300 font-mono">Cloudflare, GoDaddy, Spaceship</p>
+                <div class="p-4 bg-slate-950/60 border border-slate-800/60 rounded-xl space-y-3">
+                    <div class="flex items-center gap-2 text-sky-400"><i class="devicon-cloudflare-plain colored text-2xl"></i> <span class="text-xs font-bold uppercase tracking-wider text-slate-300">DNS & Edge Management</span></div>
+                    <p class="text-xs text-slate-400 code-font">Cloudflare Proxy, GoDaddy Registrar, Spaceship Infrastructure Mapping</p>
                 </div>
             </div>
         </section>
 
-        <section class="bg-slate-900/40 backdrop-blur-md border border-slate-800/80 p-6 sm:p-8 rounded-2xl shadow-xl space-y-6">
+        <section class="glow-card p-6 sm:p-8 rounded-3xl space-y-6">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800/60 pb-4">
-                <h2 class="text-xl font-bold text-white flex items-center gap-2">
-                    <i class="fa-solid fa-briefcase text-sky-400"></i> Experience
+                <h2 class="text-xl font-bold text-white flex items-center gap-2.5">
+                    <i class="fa-solid fa-server text-sky-400 text-lg"></i> Professional Footprint
                 </h2>
-                <span class="text-xs font-semibold px-2.5 py-1 bg-slate-800 text-slate-400 rounded-full">July 2025 – July 2026</span>
+                <span class="text-xs font-medium code-font px-3 py-1 bg-slate-900 text-sky-400 rounded-md border border-slate-800">July 2025 – July 2026</span>
             </div>
             
             <div class="space-y-4">
                 <div>
                     <h3 class="text-lg font-bold text-slate-100">Junior DevOps Engineer</h3>
-                    <p class="text-xs text-sky-400/90 font-medium">Core Deliverables & Automation</p>
+                    <p class="text-xs text-sky-400 font-semibold tracking-wider uppercase">Infrastructure Engineering & Automations</p>
                 </div>
                 <ul class="space-y-3 text-sm text-slate-400 list-none pl-0">
-                    <li class="flex gap-3"><span class="text-sky-500 font-bold">▹</span> Built and optimized secure deployment pipelines using Jenkins and Bitbucket to automate standard software delivery cycles.</li>
-                    <li class="flex gap-3"><span class="text-sky-500 font-bold">▹</span> Packaged, registered, and systematically managed microservices using AWS ECR and ECS infrastructure.</li>
-                    <li class="flex gap-3"><span class="text-sky-500 font-bold">▹</span> Provisioned and managed scalable AWS environments, including EC2 scaling, secure S3 asset storage, and CloudFront integration.</li>
-                    <li class="flex gap-3"><span class="text-sky-500 font-bold">▹</span> Handled domain lifecycles, global SSL/TLS configurations, and custom DNS routing mappings across Route 53, Cloudflare, and Spaceship.</li>
+                    <li class="flex gap-3"><span class="text-sky-400 font-bold font-mono">⚡</span> Managed system integration workflows provisioning standard deployment tracks via programmatic Jenkins pipelines connected with Bitbucket hooks.</li>
+                    <li class="flex gap-3"><span class="text-sky-400 font-bold font-mono">⚡</span> Successfully packaged application dependencies into Docker images to serve over Amazon ECS clusters via automated ECR image pulls.</li>
+                    <li class="flex gap-3"><span class="text-sky-400 font-bold font-mono">⚡</span> Integrated AWS infrastructure mechanisms covering EC2 instance tracking, static asset hosting with Amazon S3, and sub-second network cache tuning via CloudFront.</li>
+                    <li class="flex gap-3"><span class="text-sky-400 font-bold font-mono">⚡</span> Engineered robust DNS network logic mappings managing routing registers across Route 53 zones, Cloudflare security protections, and registrar domains.</li>
                 </ul>
             </div>
         </section>
 
-        <section class="bg-slate-900/40 backdrop-blur-md border border-slate-800/80 p-6 sm:p-8 rounded-2xl shadow-xl space-y-6">
-            <h2 class="text-xl font-bold text-white flex items-center gap-2">
-                <i class="fa-solid fa-graduation-cap text-sky-400"></i> Education & Credentials
+        <section class="glow-card p-6 sm:p-8 rounded-3xl space-y-6">
+            <h2 class="text-xl font-bold text-white flex items-center gap-2.5">
+                <i class="fa-solid fa-graduation-cap text-sky-400 text-lg"></i> Validation & Education
             </h2>
             
-            <div class="space-y-4">
-                <div class="flex items-start gap-4 p-4 bg-slate-900/50 rounded-xl border border-slate-800/60">
-                    <div class="p-2 bg-sky-500/10 rounded-lg text-sky-400 text-lg"><i class="fa-solid fa-certificate"></i></div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="p-4 bg-slate-900/30 border border-slate-800/60 rounded-2xl flex items-center gap-3">
+                    <div class="text-2xl text-sky-400"><i class="fa-solid fa-award"></i></div>
                     <div>
-                        <h4 class="font-bold text-slate-200 text-sm sm:text-base">IBM AWS Cloud Certification</h4>
-                        <p class="text-xs text-slate-400">SLA Academy, KK Nagar, Chennai</p>
+                        <h4 class="font-bold text-slate-200 text-xs sm:text-sm">IBM AWS Cloud Cert</h4>
+                        <p class="text-[11px] text-slate-500">SLA Academy, Chennai</p>
                     </div>
                 </div>
-                <div class="flex items-start gap-4 p-4 bg-slate-900/50 rounded-xl border border-slate-800/60">
-                    <div class="p-2 bg-sky-500/10 rounded-lg text-sky-400 text-lg"><i class="fa-solid fa-university"></i></div>
+                <div class="p-4 bg-slate-900/30 border border-slate-800/60 rounded-2xl flex items-center gap-3">
+                    <div class="text-2xl text-sky-400"><i class="fa-solid fa-user-graduate"></i></div>
                     <div>
-                        <h4 class="font-bold text-slate-200 text-sm sm:text-base">Bachelor of Engineering (B.E. - EEE)</h4>
-                        <p class="text-xs text-slate-400">Electrical and Electronics Engineering</p>
+                        <h4 class="font-bold text-slate-200 text-xs sm:text-sm">B.E. (EEE)</h4>
+                        <p class="text-[11px] text-slate-500">Engineering Graduate</p>
                     </div>
                 </div>
-                <div class="flex items-start gap-4 p-4 bg-slate-900/50 rounded-xl border border-slate-800/60">
-                    <div class="p-2 bg-sky-500/10 rounded-lg text-sky-400 text-lg"><i class="fa-solid fa-school"></i></div>
+                <div class="p-4 bg-slate-900/30 border border-slate-800/60 rounded-2xl flex items-center gap-3">
+                    <div class="text-2xl text-sky-400"><i class="fa-solid fa-scroll"></i></div>
                     <div>
-                        <h4 class="font-bold text-slate-200 text-sm sm:text-base">Diploma (EEE)</h4>
-                        <p class="text-xs text-slate-400">Electrical and Electronics Engineering</p>
+                        <h4 class="font-bold text-slate-200 text-xs sm:text-sm">Diploma (EEE)</h4>
+                        <p class="text-[11px] text-slate-500">Technical Education</p>
                     </div>
                 </div>
             </div>
