@@ -3,87 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexura Creative Agency | High-performance ad creatives that drive growth</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>LUMINA | Synthesis is our Catalyst</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&family=JetBrains+Mono:wght@200;300&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        /* Specific fonts mapped to requirement */
-        .font-dot {
-            font-family: 'DotGothic16', sans-serif;
+        /* Base styles matching configuration overrides */
+        body {
+            background-color: #09090B;
+            color: #A1A1AA; /* zinc-400 */
         }
-        .font-mono {
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        /* Grid Background pattern */
-        .grid-bg {
-            background-image: 
-                linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-            background-size: 60px 60px;
+        
+        .font-thin { font-weight: 100; }
+        .font-light { font-weight: 300; }
+        
+        /* Custom text-tracking & writing-modes required by spec */
+        .vertical-text {
+            writing-mode: vertical-rl;
         }
 
-        /* Custom Kanban horizontal scroll styling */
-        .kanban-scroll {
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
+        /* Custom Keyframe Animations for Scanners and Borders */
+        @keyframes logo-scan {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
-        .kanban-scroll::-webkit-scrollbar {
-            height: 6px;
+        .animate-logo-scan {
+            animation: logo-scan 4.5s ease-in-out infinite;
         }
-        .kanban-scroll::-webkit-scrollbar-track {
-            background: transparent;
+
+        @keyframes border-spin {
+            100% { transform: rotate(360deg); }
         }
-        .kanban-scroll::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.1);
+        .animate-border-spin {
+            animation: border-spin 12s linear infinite;
+        }
+
+        @keyframes orbital-rotation {
+            100% { transform: rotate(360deg); }
+        }
+        .animate-orbital-drift {
+            animation: orbital-rotation 24s linear infinite;
+        }
+
+        /* Conic border gradient helper */
+        .conic-cta-wrap {
+            position: relative;
+            background: #030303;
+            padding: 1px;
+            overflow: hidden;
             border-radius: 9999px;
         }
+        .conic-cta-glow {
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: conic-gradient(from 0deg, transparent 0%, #22D3EE 25%, transparent 50%, #22D3EE 75%, transparent 100%);
+        }
 
-        /* Custom Intersection Observer Reveal System */
-        .reveal {
-            opacity: 0;
-            filter: blur(10px);
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        /* Seamless Marquee Track loop */
+        @keyframes marquee-move {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
         }
-        .reveal-left {
-            opacity: 0;
-            filter: blur(10px);
-            transform: translateX(-40px);
-            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        .animate-marquee {
+            animation: marquee-move 20s linear infinite;
         }
-        .reveal-right {
+
+        /* Prevent visibility flashing before GSAP overrides */
+        .gsap-fade-up {
             opacity: 0;
-            filter: blur(10px);
-            transform: translateX(40px);
-            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-        .in-view {
-            opacity: 1;
-            filter: blur(0px);
-            transform: translateY(0) translateX(0);
+            transform: translateY(40px);
         }
     </style>
 </head>
-<body class="bg-[#0B0F19] text-white font-mono overflow-x-hidden selection:bg-blue-500/30 min-h-screen relative grid-bg">
+<body class="font-sans antialiased selection:bg-cyan-400/30 selection:text-white overflow-x-hidden">
 
-    <div class="absolute inset-0 z-[-1] overflow-hidden pointer-events-none">
-        <div class="absolute inset-0 w-full h-[100vh] sm:h-[110vh] opacity-40 mix-blend-screen">
-            <video 
-                class="w-full h-full object-cover"
-                autoplay 
-                muted 
-                loop 
-                playsinline 
-                preload="metadata"
-                poster="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/a99ea2b7-ad5e-4188-bc7b-afa6b40c71ac_3840w.jpg">
-                <source src="https://wypspaektjjiccarxrgy.supabase.co/storage/v1/object/public/generated-page-media/302e86e0-80d8-4ba5-82e8-004220675655/2026-05-19/1779181978164-de4c8727-3137-4d53-9127-2b0edc9e8318.mp4" type="video/mp4">
-            </video>
+    <canvas id="ambient-noise-canvas" class="fixed inset-0 z-0 w-full h-full pointer-events-none opacity-60"></canvas>
+
+    <div class="fixed inset-0 z-0 flex justify-end pointer-events-none overflow-hidden">
+        <div class="gsap-bg-img relative w-full lg:w-3/4 h-full opacity-30 mix-blend-luminosity grayscale contrast-[1.2]">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover object-center" alt="Spatial ambient structure">
+            <svg class="gsap-curve absolute inset-0 w-full h-full text-[#09090B] fill-current" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0,0 L0,100 L55,100 Q75,50 55,0 Z"></path>
+            </svg>
         </div>
+    </div>
 
-        <div class="absolute top-[10%] left-[15%] w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-[120px]"></div>
-        <div class="absolute top-[40%] right-[10%] w-[500px] h-[500px] bg-purple-500/
+    <div class="orbital-bg fixed inset-0 z-1 pointer-events-none mix-blend-screen opacity-20 flex items-center justify-center">
+        <svg class="animate-orbital-drift w-[1200px] h-[1200px]" viewBox="0 0 100 100">
+            <ellipse cx="50" cy="50" rx="45" ry="20" fill="none" stroke="#22D3EE" stroke-width="0.08" stroke-dasharray="1, 3" id="orbital-line"></ellipse>
+            <ellipse cx="50" cy="50" rx="35" ry="35" fill="none" stroke="#52525B" stroke-width="0.05" stroke-dasharray="4, 12
