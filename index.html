@@ -3,175 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M. Prithivraj | DevOps Infrastructure Engineer</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>LUMINA | Synthesis is our Catalyst</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&family=JetBrains+Mono:wght@200;300&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
         body {
-            background-color: #030712;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #09090B;
+            color: #A1A1AA; /* zinc-400 */
         }
-        .code-font {
-            font-family: 'JetBrains Mono', monospace;
+        
+        .font-thin { font-weight: 100; }
+        .font-light { font-weight: 300; }
+        
+        /* Fixed layout container tracking to prevent letters collapsing into dot fragments */
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
         }
-        .glow-card {
-            background: linear-gradient(135deg, rgba(17, 24, 39, 0.7) 0%, rgba(31, 41, 55, 0.4) 100%);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(56, 189, 248, 0.1);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+        /* Scanners & Conic Shaders */
+        @keyframes logo-scan {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
-        .glow-card:hover {
-            border-color: rgba(56, 189, 248, 0.4);
-            box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.15);
-            transform: translateY(-2px);
+        .animate-logo-scan {
+            animation: logo-scan 4.5s ease-in-out infinite;
+        }
+
+        @keyframes border-spin {
+            100% { transform: rotate(360deg); }
+        }
+        .animate-border-spin {
+            animation: border-spin 12s linear infinite;
+        }
+
+        @keyframes orbital-rotation {
+            100% { transform: rotate(360deg); }
+        }
+        .animate-orbital-drift {
+            animation: orbital-rotation 32s linear infinite;
+        }
+
+        .conic-cta-wrap {
+            position: relative;
+            background: #030303;
+            padding: 1px;
+            overflow: hidden;
+            border-radius: 9999px;
+        }
+        .conic-cta-glow {
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: conic-gradient(from 0deg, transparent 0%, #22D3EE 25%, transparent 50%, #22D3EE 75%, transparent 100%);
+        }
+
+        @keyframes marquee-move {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee-move 25s linear infinite;
+        }
+
+        /* Added structural line padding buffer to avoid browser line-clipping */
+        .hero-line-container {
+            padding-top: 4px;
+            padding-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .gsap-fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            will-change: transform, opacity;
         }
     </style>
 </head>
-<body class="text-slate-100 antialiased min-h-screen selection:bg-sky-500/30 selection:text-sky-300 py-16 px-4">
+<body class="font-sans antialiased selection:bg-cyan-400/30 selection:text-white overflow-x-hidden">
 
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] pointer-events-none opacity-20 blur-[150px] bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-500 rounded-full -z-10"></div>
+    <canvas id="ambient-noise-canvas" class="fixed inset-0 z-0 w-full h-full pointer-events-none opacity-40"></canvas>
 
-    <div class="max-w-4xl mx-auto space-y-12">
-        
-        <header class="glow-card p-8 rounded-3xl relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-32 h-32 bg-sky-500/10 rounded-bl-full pointer-events-none"></div>
-            
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-                <div class="space-y-3">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold text-emerald-400 bg-emerald-500/10 rounded-full border border-emerald-500/20">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Active Pipeline Live
-                    </div>
-                    <h1 class="text-4xl sm:text-5xl font-black tracking-tight text-white">
-                        M. PRITHIVRAJ
-                    </h1>
-                    <p class="text-lg font-bold code-font text-sky-400 tracking-wider">
-                        &gt;_ JUNIOR DEVOPS ENGINEER
-                    </p>
-                    <p class="text-slate-400 text-sm flex items-center gap-2">
-                        <i class="fa-solid fa-map-pin text-sky-400"></i> Chennai, India • Cloud Automation Specialist
-                    </p>
-                </div>
-                
-                <div class="flex flex-col w-full md:w-auto gap-3 text-sm">
-                    <button onclick="navigator.clipboard.writeText('prithiv6380407352@gmail.com'); alert('Email copied!');" class="w-full justify-center flex items-center gap-2 px-5 py-3 bg-sky-500 hover:bg-sky-600 text-slate-950 font-bold rounded-xl transition-all cursor-pointer shadow-lg shadow-sky-500/20">
-                        <i class="fa-solid fa-copy"></i> Copy Email ID
-                    </button>
-                    <div class="flex gap-2">
-                        <a href="https://linkedin.com" target="_blank" class="flex-1 text-center flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-900/90 border border-slate-800 rounded-xl hover:border-slate-700 hover:bg-slate-800/80 transition-all">
-                            <i class="fa-brands fa-linkedin text-sky-400"></i> LinkedIn
-                        </a>
-                        <a href="https://github.com" target="_blank" class="flex-1 text-center flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-900/90 border border-slate-800 rounded-xl hover:border-slate-700 hover:bg-slate-800/80 transition-all">
-                            <i class="fa-brands fa-github text-slate-400"></i> GitHub
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-            <div class="glow-card p-5 rounded-2xl text-center">
-                <span class="block text-3xl font-extrabold text-white code-font">1+</span>
-                <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Years Experience</span>
-            </div>
-            <div class="glow-card p-5 rounded-2xl text-center">
-                <span class="block text-3xl font-extrabold text-sky-400 code-font">10+</span>
-                <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">AWS Services Mastered</span>
-            </div>
-            <div class="glow-card p-5 rounded-2xl text-center col-span-2 sm:col-span-1">
-                <span class="block text-3xl font-extrabold text-emerald-400 code-font">99.9%</span>
-                <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Uptime Focused</span>
-            </div>
+    <div class="fixed inset-0 z-0 flex justify-end pointer-events-none overflow-hidden">
+        <div class="gsap-bg-img relative w-full lg:w-3/4 h-full opacity-25 mix-blend-luminosity grayscale contrast-[1.25]">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover object-center" alt="Spatial backdrop">
+            <svg class="gsap-curve absolute inset-0 w-full h-full text-[#09090B] fill-current" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0,0 L0,100 L55,100 Q75,50 55,0 Z"></path>
+            </svg>
         </div>
-
-        <section class="glow-card p-6 sm:p-8 rounded-3xl space-y-4">
-            <h2 class="text-xl font-bold text-white flex items-center gap-2.5">
-                <i class="fa-solid fa-terminal text-sky-400 text-lg"></i> Profile Summary
-            </h2>
-            <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
-                Result-driven Systems Professional specializing in automating infrastructure delivery. Expert at translating continuous integration mandates into highly available deployments inside the <span class="text-white font-medium">AWS Platform</span>. Highly effective at configuring containerized application workflows (<span class="text-white font-medium">ECS/ECR</span>) and managing multi-channel domain mappings smoothly.
-            </p>
-        </section>
-
-        <section class="glow-card p-6 sm:p-8 rounded-3xl space-y-6">
-            <h2 class="text-xl font-bold text-white flex items-center gap-2.5">
-                <i class="fa-solid fa-cubes text-sky-400 text-lg"></i> Tooling Ecosystem
-            </h2>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div class="p-4 bg-slate-950/60 border border-slate-800/60 rounded-xl space-y-3">
-                    <div class="flex items-center gap-2 text-sky-400"><i class="devicon-amazonwebservices-wordmark colored text-2xl"></i> <span class="text-xs font-bold uppercase tracking-wider text-slate-300">Cloud Core</span></div>
-                    <p class="text-xs text-slate-400 code-font">EC2, S3, CloudFront, Lambda, Route 53, IAM, CloudWatch, SNS</p>
-                </div>
-                <div class="p-4 bg-slate-950/60 border border-slate-800/60 rounded-xl space-y-3">
-                    <div class="flex items-center gap-2 text-sky-400"><i class="devicon-jenkins-line colored text-2xl"></i> <span class="text-xs font-bold uppercase tracking-wider text-slate-300">CI/CD & Source</span></div>
-                    <p class="text-xs text-slate-400 code-font">Jenkins Automation Engine, Bitbucket Repositories</p>
-                </div>
-                <div class="p-4 bg-slate-950/60 border border-slate-800/60 rounded-xl space-y-3">
-                    <div class="flex items-center gap-2 text-sky-400"><i class="devicon-docker-plain colored text-2xl"></i> <span class="text-xs font-bold uppercase tracking-wider text-slate-300">Containerization</span></div>
-                    <p class="text-xs text-slate-400 code-font">Amazon Elastic Container Service (ECS), Amazon Elastic Container Registry (ECR)</p>
-                </div>
-                <div class="p-4 bg-slate-950/60 border border-slate-800/60 rounded-xl space-y-3">
-                    <div class="flex items-center gap-2 text-sky-400"><i class="devicon-cloudflare-plain colored text-2xl"></i> <span class="text-xs font-bold uppercase tracking-wider text-slate-300">DNS & Edge Management</span></div>
-                    <p class="text-xs text-slate-400 code-font">Cloudflare Proxy, GoDaddy Registrar, Spaceship Infrastructure Mapping</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="glow-card p-6 sm:p-8 rounded-3xl space-y-6">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800/60 pb-4">
-                <h2 class="text-xl font-bold text-white flex items-center gap-2.5">
-                    <i class="fa-solid fa-server text-sky-400 text-lg"></i> Professional Footprint
-                </h2>
-                <span class="text-xs font-medium code-font px-3 py-1 bg-slate-900 text-sky-400 rounded-md border border-slate-800">July 2025 – July 2026</span>
-            </div>
-            
-            <div class="space-y-4">
-                <div>
-                    <h3 class="text-lg font-bold text-slate-100">Junior DevOps Engineer</h3>
-                    <p class="text-xs text-sky-400 font-semibold tracking-wider uppercase">Infrastructure Engineering & Automations</p>
-                </div>
-                <ul class="space-y-3 text-sm text-slate-400 list-none pl-0">
-                    <li class="flex gap-3"><span class="text-sky-400 font-bold font-mono">⚡</span> Managed system integration workflows provisioning standard deployment tracks via programmatic Jenkins pipelines connected with Bitbucket hooks.</li>
-                    <li class="flex gap-3"><span class="text-sky-400 font-bold font-mono">⚡</span> Successfully packaged application dependencies into Docker images to serve over Amazon ECS clusters via automated ECR image pulls.</li>
-                    <li class="flex gap-3"><span class="text-sky-400 font-bold font-mono">⚡</span> Integrated AWS infrastructure mechanisms covering EC2 instance tracking, static asset hosting with Amazon S3, and sub-second network cache tuning via CloudFront.</li>
-                    <li class="flex gap-3"><span class="text-sky-400 font-bold font-mono">⚡</span> Engineered robust DNS network logic mappings managing routing registers across Route 53 zones, Cloudflare security protections, and registrar domains.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="glow-card p-6 sm:p-8 rounded-3xl space-y-6">
-            <h2 class="text-xl font-bold text-white flex items-center gap-2.5">
-                <i class="fa-solid fa-graduation-cap text-sky-400 text-lg"></i> Validation & Education
-            </h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="p-4 bg-slate-900/30 border border-slate-800/60 rounded-2xl flex items-center gap-3">
-                    <div class="text-2xl text-sky-400"><i class="fa-solid fa-award"></i></div>
-                    <div>
-                        <h4 class="font-bold text-slate-200 text-xs sm:text-sm">IBM AWS Cloud Cert</h4>
-                        <p class="text-[11px] text-slate-500">SLA Academy, Chennai</p>
-                    </div>
-                </div>
-                <div class="p-4 bg-slate-900/30 border border-slate-800/60 rounded-2xl flex items-center gap-3">
-                    <div class="text-2xl text-sky-400"><i class="fa-solid fa-user-graduate"></i></div>
-                    <div>
-                        <h4 class="font-bold text-slate-200 text-xs sm:text-sm">B.E. (EEE)</h4>
-                        <p class="text-[11px] text-slate-500">Engineering Graduate</p>
-                    </div>
-                </div>
-                <div class="p-4 bg-slate-900/30 border border-slate-800/60 rounded-2xl flex items-center gap-3">
-                    <div class="text-2xl text-sky-400"><i class="fa-solid fa-scroll"></i></div>
-                    <div>
-                        <h4 class="font-bold text-slate-200 text-xs sm:text-sm">Diploma (EEE)</h4>
-                        <p class="text-[11px] text-slate-500">Technical Education</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
     </div>
 
-</body>
-</html>
+    <div class="orbital-bg fixed inset-0 z-1 pointer-events-none mix-blend-screen opacity-15 flex items-center justify-center">
+        <svg class="animate-orbital-drift w-[1100px] h-[1100px]" viewBox="0 0 100 100">
+            <ellipse cx="50" cy="50" rx="44" ry="22" fill="none" stroke="#22D3EE" stroke-width="0.1" stroke-dasharray="1, 4"></ellipse>
+            <ellipse cx="50" cy="50" rx="32" ry="32" fill="none" stroke="#52525B" stroke-width="0.08" stroke-dasharray="6, 12"></ellipse>
+            <circle cx="50" cy="50" r="1.5" fill="#22D3EE" opacity="0.5"></circle>
+        </svg>
+    </div>
+
+    <aside id="system-sidebar" class="fixed left-0 top-0 bottom-0 w-20 md:w-24 bg-[#090911]/80 border-r border-[#18181B] backdrop-blur-md z-30 flex flex-col justify-between items-center py-8">
+        <div class="flex flex-col items-center gap-2">
+            <div class="w-9 h-9 rounded border border-cyan-400/30 flex items-center justify-center text-cyan-400 bg-[#030303] shadow-[0_0_10px_rgba(34,211,238,0.1)]">
+                <iconify-icon icon="solar:cpu-bolt-linear" class="text-xl"></iconify-icon>
+            </div>
+            <span class="vertical-text rotate-180 font-mono text-[10px] tracking-
