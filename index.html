@@ -28,19 +28,18 @@
     <style>
         body {
             background-color: #09090B;
-            color: #A1A1AA; /* zinc-400 */
+            color: #A1A1AA;
         }
         
         .font-thin { font-weight: 100; }
         .font-light { font-weight: 300; }
         
-        /* Fixed layout container tracking to prevent letters collapsing into dot fragments */
         .vertical-text {
             writing-mode: vertical-rl;
             text-orientation: mixed;
         }
 
-        /* Scanners & Conic Shaders */
+        /* Continuous Animations */
         @keyframes logo-scan {
             0% { transform: translateX(-100%); }
             100% { transform: translateX(100%); }
@@ -84,16 +83,14 @@
             animation: marquee-move 25s linear infinite;
         }
 
-        /* Added structural line padding buffer to avoid browser line-clipping */
         .hero-line-container {
-            padding-top: 4px;
-            padding-bottom: 12px;
+            padding-bottom: 4px;
             overflow: hidden;
         }
 
+        /* SAFE DEFAULT: Visible by default so it never blanks out if JS stutters */
         .gsap-fade-up {
-            opacity: 0;
-            transform: translateY(30px);
+            opacity: 1;
             will-change: transform, opacity;
         }
     </style>
@@ -119,9 +116,424 @@
         </svg>
     </div>
 
-    <aside id="system-sidebar" class="fixed left-0 top-0 bottom-0 w-20 md:w-24 bg-[#090911]/80 border-r border-[#18181B] backdrop-blur-md z-30 flex flex-col justify-between items-center py-8">
+    <aside id="system-sidebar" class="fixed left-0 top-0 bottom-0 w-20 md:w-24 bg-[#090911]/90 border-r border-[#18181B] backdrop-blur-md z-40 flex flex-col justify-between items-center py-8">
         <div class="flex flex-col items-center gap-2">
-            <div class="w-9 h-9 rounded border border-cyan-400/30 flex items-center justify-center text-cyan-400 bg-[#030303] shadow-[0_0_10px_rgba(34,211,238,0.1)]">
+            <div class="w-9 h-9 rounded border border-cyan-400/30 flex items-center justify-center text-cyan-400 bg-[#030303]">
                 <iconify-icon icon="solar:cpu-bolt-linear" class="text-xl"></iconify-icon>
             </div>
-            <span class="vertical-text rotate-180 font-mono text-[10px] tracking-
+            <span class="vertical-text rotate-180 font-mono text-[10px] tracking-[0.25em] text-zinc-100 font-light mt-6 block select-none">LUMINA</span>
+        </div>
+
+        <nav class="flex flex-col items-center gap-10">
+            <a href="#hero" class="vertical-text rotate-180 font-mono text-[9px] tracking-[0.2em] text-cyan-400 hover:text-white transition-colors uppercase">SYS.INIT</a>
+            <a href="#capabilities" class="vertical-text rotate-180 font-mono text-[9px] tracking-[0.2em] text-zinc-500 hover:text-cyan-400 transition-colors uppercase">CORE.CAP</a>
+            <a href="#telemetry" class="vertical-text rotate-180 font-mono text-[9px] tracking-[0.2em] text-zinc-500 hover:text-cyan-400 transition-colors uppercase">TEL.METR</a>
+            <a href="#architectures" class="vertical-text rotate-180 font-mono text-[9px] tracking-[0.2em] text-zinc-500 hover:text-cyan-400 transition-colors uppercase">PROV.ARC</a>
+        </nav>
+
+        <div class="flex flex-col items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_#22d3ee]"></span>
+            <span class="font-mono text-[9px] text-zinc-600 tracking-normal">V1.0.0</span>
+        </div>
+    </aside>
+
+    <main class="relative z-30 pl-24 md:pl-28 lg:pl-40 xl:pl-56 pr-4 md:pr-12 lg:pr-24 w-full min-h-screen space-y-48">
+        
+        <section id="hero" class="min-h-screen pt-20 flex flex-col justify-between pb-16 relative">
+            <div class="max-w-4xl space-y-8 mt-8">
+                
+                <div class="inline-flex items-center gap-3 px-3 py-1.5 rounded bg-[#030303] border border-[#18181B]">
+                    <span class="font-mono text-[10px] tracking-wider text-cyan-400">FRAMEWORK IDENTITY NODE</span>
+                    <span class="w-1 h-1 rounded-full bg-zinc-700"></span>
+                    <span class="font-mono text-[10px] tracking-normal text-zinc-400">ALPHA_DEPLOY_ONLINE</span>
+                </div>
+
+                <div class="space-y-1">
+                    <h1 class="text-4xl sm:text-6xl md:text-7xl xl:text-8xl font-thin tracking-[-0.04em] text-zinc-100 leading-none">
+                        <div class="hero-line-container"><span class="inline-block hero-line">SYNTHESIS IS</span></div>
+                        <div class="hero-line-container"><span class="inline-block hero-line text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 via-zinc-400 to-cyan-400">OUR CATALYST</span></div>
+                    </h1>
+                </div>
+
+                <p class="max-w-xl font-sans font-light text-zinc-400 text-sm md:text-base leading-relaxed gsap-fade-up">
+                    Deploy structural neural pipelines inside spatial computing environments. Lumina fuses sub-millisecond calculation engines cleanly into deep geometric layouts.
+                </p>
+
+                <div class="flex flex-wrap items-center gap-6 pt-4 gsap-fade-up">
+                    <div class="conic-cta-wrap">
+                        <div class="conic-cta-glow animate-border-spin"></div>
+                        <a href="#contact" class="relative block px-6 py-4 bg-[#030303] text-zinc-100 font-mono text-[10px] tracking-widest rounded-full uppercase transition-all hover:text-cyan-400">
+                            INITIALIZE SEQUENCE
+                        </a>
+                    </div>
+                    <a href="#capabilities" class="font-mono text-[10px] tracking-wider text-zinc-400 hover:text-zinc-100 transition-colors uppercase">
+                        EXPLORE WORKSPACE MODELS &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-[#18181B] mt-20 max-w-4xl gsap-fade-up">
+                <div class="space-y-1">
+                    <span class="font-mono text-[9px] text-zinc-500 block tracking-wider">CORE_THROTTLE_RATE</span>
+                    <div class="flex items-baseline text-zinc-100">
+                        <span class="text-2xl md:text-4xl font-thin tracking-tight stat-number" data-target="984">0</span>
+                        <span class="text-xs font-mono text-cyan-400 ml-1">GHZ</span>
+                    </div>
+                </div>
+                <div class="space-y-1">
+                    <span class="font-mono text-[9px] text-zinc-500 block tracking-wider">LATENCY_VECTOR_INDEX</span>
+                    <div class="flex items-baseline text-zinc-100">
+                        <span class="text-2xl md:text-4xl font-thin tracking-tight stat-number" data-target="12">0</span>
+                        <span class="text-xs font-mono text-zinc-500 ml-1">MS</span>
+                    </div>
+                </div>
+                <div class="space-y-1">
+                    <span class="font-mono text-[9px] text-zinc-500 block tracking-wider">NEURAL_MESH_DENSITY</span>
+                    <div class="flex items-baseline text-zinc-100">
+                        <span class="text-2xl md:text-4xl font-thin tracking-tight stat-number" data-target="86">0</span>
+                        <span class="text-xs font-mono text-cyan-400 ml-1">%</span>
+                    </div>
+                </div>
+                <div class="space-y-1">
+                    <span class="font-mono text-[9px] text-zinc-500 block tracking-wider">SYNAPSE_LOAD_BOUND</span>
+                    <div class="flex items-baseline text-zinc-100">
+                        <span class="text-2xl md:text-4xl font-thin tracking-tight stat-number" data-target="412">0</span>
+                        <span class="text-xs font-mono text-zinc-500 ml-1">TB/S</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hidden xl:block absolute top-[calc(100vh-24rem)] right-4 w-80 rounded-xl bg-[#030303]/95 border border-white/10 shadow-[0_25px_50px_-12px_rgba(0,229,255,0.1)] p-5 space-y-4 z-40 backdrop-blur-xl">
+                <div class="w-full h-32 rounded overflow-hidden relative grayscale contrast-125">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Telemetry card visualization">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#030303] to-transparent"></div>
+                </div>
+                <div class="space-y-1.5">
+                    <div class="flex items-center justify-between text-[10px] font-mono">
+                        <span class="text-cyan-400 tracking-wider font-light">NODE_MATRIX_LIVE</span>
+                        <span class="text-zinc-500">99.9% MONITOR</span>
+                    </div>
+                    <h4 class="text-xs text-zinc-200 tracking-tight font-light">Spatial Deployment Context Engine</h4>
+                    <p class="text-[11px] text-zinc-500 leading-relaxed">Programmatic telemetry feed streaming live structural parameters securely to terminal configurations.</p>
+                </div>
+                <div class="h-[1px] bg-[#18181B]"></div>
+                <div class="flex justify-between items-center text-[10px] font-mono text-zinc-500">
+                    <span>SECTOR_09_UPTIME</span>
+                    <span class="text-zinc-300">04:12:09:44</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="w-full overflow-hidden relative py-5 border-y border-[#18181B] bg-[#030303]/60 backdrop-blur-md">
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/10 to-transparent w-1/3 animate-logo-scan pointer-events-none"></div>
+            <div class="flex animate-marquee whitespace-nowrap gap-20 items-center">
+                <div class="flex items-center gap-20 shrink-0">
+                    <span class="font-mono text-[11px] tracking-widest text-zinc-400">AETHER_LABS</span>
+                    <span class="font-mono text-[11px] tracking-widest text-zinc-100">ORBITAL_NET</span>
+                    <span class="font-mono text-[11px] tracking-widest text-zinc-400">MONOLITH_STRUCTURE</span>
+                    <span class="font-mono text-[11px] tracking-widest text-zinc-100">VEKTOR_COMPUTE</span>
+                    <span class="font-mono text-[11px] tracking-widest text-zinc-400">NOVA_ARRAY</span>
+                </div>
+                <div class="flex items-center gap-20 shrink-0">
+                    <span class="font-mono text-[11px] tracking-widest text-zinc-400">AETHER_LABS</span>
+                    <span class="font-mono text-[11px] tracking-widest text-zinc-100">ORBITAL_NET</span>
+                    <span class="font-mono text-[11px] tracking-widest text-zinc-400">MONOLITH_STRUCTURE</span>
+                    <span class="font-mono text-[11px] tracking-widest text-zinc-100">VEKTOR_COMPUTE</span>
+                    <span class="font-mono text-[11px] tracking-widest text-zinc-400">NOVA_ARRAY</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="xl:hidden max-w-md mx-auto gsap-fade-up px-2">
+            <div class="rounded-xl bg-[#030303]/95 border border-white/10 p-5 space-y-4 shadow-[0_20px_40px_-15px_rgba(0,229,255,0.05)]">
+                <div class="w-full h-32 rounded overflow-hidden relative grayscale contrast-125">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Mobile visibility thumbnail">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#030303] to-transparent"></div>
+                </div>
+                <div class="space-y-1">
+                    <div class="flex items-center justify-between text-[10px] font-mono">
+                        <span class="text-cyan-400 tracking-wider">NODE_AURA_MOBILE</span>
+                        <span class="text-zinc-500">ACTIVE</span>
+                    </div>
+                    <h4 class="text-xs text-zinc-200 tracking-tight font-light">Spatial Deployment Context Engine</h4>
+                </div>
+            </div>
+        </section>
+
+        <section id="capabilities" class="space-y-12 max-w-4xl">
+            <div class="space-y-2 gsap-fade-up">
+                <span class="font-mono text-[10px] text-cyan-400 tracking-wider block">DISCIPLINE MATRIX LAYERS</span>
+                <h2 class="text-3xl md:text-5xl font-thin text-zinc-100 tracking-tight">Core System Architecture</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="group relative rounded-xl border border-[#18181B] bg-[#030303]/90 p-6 space-y-4 hover:border-cyan-500/40 transition-all duration-500 gsap-fade-up">
+                    <div class="flex items-center justify-between">
+                        <div class="w-9 h-9 rounded bg-zinc-900 border border-[#18181B] flex items-center justify-center text-zinc-300 group-hover:text-cyan-400 transition-colors">
+                            <iconify-icon icon="solar:programming-linear" class="text-lg"></iconify-icon>
+                        </div>
+                        <span class="font-mono text-[9px] text-zinc-600">CAP_NODE_01</span>
+                    </div>
+                    <h3 class="text-base font-light text-zinc-200 tracking-tight">Neural Processing Fabrics</h3>
+                    <p class="text-xs text-zinc-500 leading-relaxed">Multi-layered asynchronous configurations distributing processing tracks fluidly without bottleneck vectors.</p>
+                </div>
+
+                <div class="group relative rounded-xl border border-[#18181B] bg-[#030303]/90 p-6 space-y-4 hover:border-cyan-500/40 transition-all duration-500 gsap-fade-up">
+                    <div class="flex items-center justify-between">
+                        <div class="w-9 h-9 rounded bg-zinc-900 border border-[#18181B] flex items-center justify-center text-zinc-300 group-hover:text-cyan-400 transition-colors">
+                            <iconify-icon icon="solar:database-linear" class="text-lg"></iconify-icon>
+                        </div>
+                        <span class="font-mono text-[9px] text-zinc-600">CAP_NODE_02</span>
+                    </div>
+                    <h3 class="text-base font-light text-zinc-200 tracking-tight">Quantum Memory Matrix</h3>
+                    <p class="text-xs text-zinc-500 leading-relaxed">High-density transactional memory instances mapping operations seamlessly to distributed network files.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="telemetry" class="space-y-12 max-w-4xl">
+            <div class="space-y-2 gsap-fade-up">
+                <span class="font-mono text-[10px] text-cyan-400 tracking-wider block">REALTIME FEED INSTRUMENTATION</span>
+                <h2 class="text-3xl md:text-5xl font-thin text-zinc-100 tracking-tight">Network Parameter Telemetry</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2 rounded-xl border border-[#18181B] bg-[#030303]/90 p-6 space-y-6 flex flex-col justify-between gsap-fade-up">
+                    <div class="flex flex-wrap items-center justify-between gap-4">
+                        <div>
+                            <span class="font-mono text-[9px] text-zinc-500 block">THROUGHPUT_DENSITY_HISTOGRAM</span>
+                            <h3 class="text-sm font-mono text-zinc-200 mt-1">Ecosystem Flux Channels</h3>
+                        </div>
+                        <div class="flex items-center gap-4 text-[10px] font-mono text-zinc-400">
+                            <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span> STREAMING</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-5 py-2">
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between text-[10px] font-mono text-zinc-500">
+                                <span>FABRIC_THREAD_ALPHA</span>
+                                <span class="text-zinc-300 progress-label">92%</span>
+                            </div>
+                            <div class="w-full h-1 bg-zinc-950 rounded-full overflow-hidden">
+                                <div class="h-full bg-cyan-400 progress-bar" data-progress-target="92" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between text-[10px] font-mono text-zinc-500">
+                                <span>FABRIC_THREAD_BETA</span>
+                                <span class="text-zinc-300 progress-label">74%</span>
+                            </div>
+                            <div class="w-full h-1 bg-zinc-950 rounded-full overflow-hidden">
+                                <div class="h-full bg-zinc-600 progress-bar" data-progress-target="74" style="width: 74%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-[10px] font-mono text-zinc-600 pt-3 border-t border-[#18181B] flex justify-between">
+                        <span>METRIC_MATRIX_REPORTS</span>
+                        <span class="text-cyan-400/80">ISOLATION: SYSTEM_GREEN</span>
+                    </div>
+                </div>
+
+                <div class="rounded-xl border border-[#18181B] bg-[#030303]/90 p-6 flex flex-col justify-between text-center relative overflow-hidden min-h-[220px] gsap-fade-up">
+                    <div class="flex justify-center pt-2">
+                        <div class="w-16 h-16 rounded-full border border-dashed border-zinc-800 flex items-center justify-center text-cyan-400 animate-orbital-drift">
+                            <iconify-icon icon="solar:radar-linear" class="text-3xl"></iconify-icon>
+                        </div>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="font-mono text-4xl font-thin tracking-tighter text-zinc-100 block">99.99</span>
+                        <span class="font-mono text-[9px] text-zinc-500 uppercase tracking-widest">STABLE_UPTIME_BOUNDS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="architectures" class="space-y-12 max-w-4xl">
+            <div class="space-y-2 gsap-fade-up">
+                <span class="font-mono text-[10px] text-cyan-400 tracking-wider block">VALIDATED ARCHITECTURE ARCHIVES</span>
+                <h2 class="text-3xl md:text-5xl font-thin text-zinc-100 tracking-tight">Proven Deployments</h2>
+            </div>
+
+            <div class="space-y-0 border-b border-[#18181B]">
+                <div class="group relative py-7 px-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 transition-all duration-300 hover:bg-[#030303]/70 gsap-fade-up">
+                    <div class="absolute left-0 top-0 bottom-0 w-[1px] bg-cyan-400 scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-top"></div>
+                    <div class="space-y-1">
+                        <span class="font-mono text-[9px] text-cyan-400/80">PROJECT_RECORD_09X</span>
+                        <h3 class="text-base font-light text-zinc-200 tracking-tight">The Aether-Mesh Deployment Layer</h3>
+                    </div>
+                    <div class="flex items-center gap-8 font-mono text-xs">
+                        <span class="text-zinc-500">CAPACITY: <strong class="text-zinc-300 font-normal">4.2 TB/S</strong></span>
+                        <iconify-icon icon="solar:arrow-right-up-linear" class="text-zinc-600 group-hover:text-cyan-400 transition-colors text-base"></iconify-icon>
+                    </div>
+                </div>
+
+                <div class="group relative py-7 px-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 transition-all duration-300 hover:bg-[#030303]/70 gsap-fade-up">
+                    <div class="absolute left-0 top-0 bottom-0 w-[1px] bg-cyan-400 scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-top"></div>
+                    <div class="space-y-1">
+                        <span class="font-mono text-[9px] text-cyan-400/80">PROJECT_RECORD_12V</span>
+                        <h3 class="text-base font-light text-zinc-200 tracking-tight">Vektor Spatial Compute Core Layout</h3>
+                    </div>
+                    <div class="flex items-center gap-8 font-mono text-xs">
+                        <span class="text-zinc-500">CAPACITY: <strong class="text-zinc-300 font-normal">8.9 TB/S</strong></span>
+                        <iconify-icon icon="solar:arrow-right-up-linear" class="text-zinc-600 group-hover:text-cyan-400 transition-colors text-base"></iconify-icon>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="max-w-xl mx-auto space-y-8 text-center pb-28 gsap-fade-up">
+            <div class="space-y-2">
+                <h2 class="text-2xl font-thin text-zinc-100 tracking-tight">Initialize Matrix Secure Sync</h2>
+                <p class="text-xs text-zinc-500 font-mono">Establish validated telemetry handshake vectors directly with Lumina clusters.</p>
+            </div>
+            <div class="bg-[#030303] border border-[#18181B] rounded-xl p-6 text-left space-y-4 font-mono shadow-xl">
+                <div class="space-y-1.5">
+                    <label class="text-[9px] text-zinc-500 tracking-wider block">OPERATOR_IDENTITY_STRING</label>
+                    <input type="text" placeholder="e.g. CORE_LEAD_NODE" class="w-full bg-[#09090B] border border-[#18181B] rounded px-3 py-2.5 text-xs text-zinc-100 focus:outline-none focus:border-cyan-400 transition-colors">
+                </div>
+                <div class="space-y-1.5">
+                    <label class="text-[9px] text-zinc-500 tracking-wider block">SECURE_ENDPOINT_COMM_ADDRESS</label>
+                    <input type="email" placeholder="operator@matrix-link.net" class="w-full bg-[#09090B] border border-[#18181B] rounded px-3 py-2.5 text-xs text-zinc-100 focus:outline-none focus:border-cyan-400 transition-colors">
+                </div>
+                <button class="w-full py-3.5 bg-zinc-100 text-[#09090B] font-mono text-[10px] tracking-widest rounded hover:bg-cyan-400 hover:text-white transition-colors uppercase" onclick="alert('Telemetry pipeline handshake broadcast sent.');">
+                    DISPATCH INTERFACE REQUEST
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="relative z-40 border-t border-[#18181B] bg-[#030303] text-zinc-500 text-[10px] font-mono py-10 pl-24 md:pl-28 lg:pl-40 xl:pl-56 pr-4 md:pr-12">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+                &copy; 2026 LUMINA NETWORKS INC. SYSTEM STACK IDENTITY SECURED.
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="text-zinc-600">MIN_TYPOGRAPHY_SCALE: 10PX</span>
+                <span class="text-cyan-400 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> ALL MATRIX HUBS SECURE</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Real-time canvas grain backdrop
+        const canvas = document.getElementById('ambient-noise-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        function drawNoise() {
+            const width = canvas.width;
+            const height = canvas.height;
+            const imgData = ctx.createImageData(width, height);
+            const data = imgData.data;
+            
+            for (let i = 0; i < data.length; i += 4) {
+                const noise = Math.floor(Math.random() * 16);
+                data[i] = noise;       
+                data[i+1] = noise + 4; 
+                data[i+2] = noise + 6; 
+                data[i+3] = 25;        
+            }
+            ctx.putImageData(imgData, 0, 0);
+            requestAnimationFrame(drawNoise);
+        }
+        drawNoise();
+
+        // Safe GSAP Execution wrapped with fail-safes
+        if (typeof gsap !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger);
+
+            document.addEventListener("DOMContentLoaded", () => {
+                // Set initial animated states via JS dynamically instead of hiding them via CSS
+                gsap.set(".gsap-fade-up", { opacity: 0, y: 30 });
+                gsap.set(".hero-line", { y: "100%" });
+                gsap.set("#system-sidebar", { x: "-100%" });
+
+                const entranceTimeline = gsap.timeline({ defaults: { ease: "power4.out" } });
+                
+                entranceTimeline.to("#system-sidebar", {
+                    x: "0%",
+                    duration: 1.2
+                });
+
+                entranceTimeline.from(".gsap-bg-img", {
+                    scale: 1.12,
+                    duration: 1.5,
+                    opacity: 0
+                }, "-=0.9");
+
+                entranceTimeline.from(".gsap-curve", {
+                    scaleX: 0,
+                    transformOrigin: "left center",
+                    duration: 1.3
+                }, "-=1.1");
+
+                entranceTimeline.to(".hero-line", {
+                    y: "0%",
+                    duration: 1.1,
+                    stagger: 0.12
+                }, "-=0.7");
+
+                // Numerical Counter Logic Pipeline
+                const statNumbers = document.querySelectorAll('.stat-number');
+                statNumbers.forEach(stat => {
+                    const target = parseInt(stat.getAttribute('data-target'));
+                    gsap.to(stat, {
+                        innerText: target,
+                        duration: 2.2,
+                        snap: { innerText: 1 },
+                        ease: "power3.out",
+                        scrollTrigger: {
+                            trigger: stat,
+                            start: "top 92%"
+                        }
+                    });
+                });
+
+                // Progressive Batch Slide Element Handlers
+                ScrollTrigger.batch(".gsap-fade-up", {
+                    onEnter: batch => gsap.to(batch, { opacity: 1, y: 0, duration: 0.9, stagger: 0.12, ease: "power3.out", overwrite: "auto" }),
+                    start: "top 88%"
+                });
+
+                // Adaptive Telemetry Progress Track Animation Loops
+                const progressBars = document.querySelectorAll('.progress-bar');
+                progressBars.forEach(bar => {
+                    const targetWidth = bar.getAttribute('data-progress-target');
+                    const label = bar.closest('.space-y-1\\.5').querySelector('.progress-label');
+                    
+                    gsap.set(bar, { width: "0%" });
+                    gsap.set(label, { innerText: 0 });
+
+                    gsap.to(bar, {
+                        width: `${targetWidth}%`,
+                        duration: 1.8,
+                        ease: "power2.out",
+                        scrollTrigger: { trigger: bar, start: "top 92%" }
+                    });
+
+                    gsap.to(label, {
+                        innerText: targetWidth,
+                        duration: 1.8,
+                        snap: { innerText: 1 },
+                        ease: "power2.out",
+                        scrollTrigger: { trigger: bar, start: "top 92%" },
+                        onUpdate: function() {
+                            label.innerText = Math.floor(this.targets()[0].innerText) + '%';
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+
+</body>
+</html>
