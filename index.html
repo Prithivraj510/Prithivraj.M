@@ -10,11 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-    
-    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
 
     <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
 
@@ -71,67 +66,67 @@
             mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent);
             -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent);
         }
+
+        /* Native Intersection Reveal States */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-element.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
-<body>
+<body class="relative min-h-screen">
 
-    <div id="root"></div>
+    <div class="fixed top-0 left-0 w-full h-screen -z-10 bg-cover bg-center bg-no-repeat bg-mask-gradient opacity-30 pointer-events-none"
+         style="background-image: url('https://images.unsplash.com/photo-1598284252498-999b7bbe8e90?w=3840&q=80');">
+    </div>
 
-    <script type="text/javascript">
-        // Deconstruct React and Framer Motion Modules Globally
-        const { useState, useEffect, useRef } = React;
-        const { motion, AnimatePresence } = window.Motion;
+    <nav class="fixed top-4 left-0 w-full px-6 md:px-12 z-50 flex justify-between items-center">
+        <div class="glass-panel px-6 py-3 rounded-full flex items-center gap-2 font-medium tracking-wide text-sm">
+            <div class="w-2 h-2 rounded-full bg-[#D4D414]"></div>
+            MOSAIC CULTURAL
+        </div>
+        <div class="flex gap-3">
+            <div class="glass-panel px-5 py-3 rounded-full hidden sm:flex items-center gap-2 text-xs text-muted uppercase tracking-wider">
+                <span class="iconify text-base text-white" data-icon="solar:earth-linear"></span>
+                Tópicos Globais
+            </div>
+            <div id="slideCounter" class="glass-panel px-6 py-3 rounded-full font-mono text-xs tracking-widest text-[#D4D414]">
+                SLIDE 1 / 6
+            </div>
+        </div>
+    </nav>
 
-        function App() {
-            const [currentSlide, setCurrentSlide] = useState(1);
-            const totalSlides = 6;
+    <section data-slide="true" class="min-h-screen px-4 md:px-12 flex items-center pt-24 pb-12">
+        <div class="relative w-full h-[90vh] rounded-[2rem] overflow-hidden border border-border bg-card flex items-end p-8 md:p-16">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2944&auto=format&fit=crop"
+                 class="absolute inset-0 w-full h-full object-cover transform scale-105 opacity-60 -z-10" alt="Mundo Conectado">
+            <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent -z-10"></div>
+            
+            <div class="max-w-4xl space-y-6 reveal-element active">
+                <div class="flex items-center gap-3">
+                    <div class="w-5 h-1 bg-[#D4D414]"></div>
+                    <span class="text-xs uppercase tracking-[0.15em] font-medium text-[#D4D414]">PANORAMA GLOBAL</span>
+                </div>
+                <h1 class="text-4xl md:text-[4.5rem] font-medium leading-[1.05] tracking-[-0.05em] uppercase">
+                    Intercâmbio Cultural: 5 Hábitos Estrangeiros no Brasil
+                </h1>
+                <p class="text-base md:text-lg text-muted font-light max-w-xl leading-relaxed">
+                    Uma jornada imersiva que explora a reconfiguração e a incorporação de traços culturais externos na essência do cotidiano brasileiro.
+                </p>
+            </div>
+        </div>
+    </section>
 
-            // Keyboard Presentation Loop Controller Engine
-            useEffect(() => {
-                const handleKeyDown = (e) => {
-                    const slides = document.querySelectorAll('[data-slide="true"]');
-                    let targetIndex = null;
-
-                    if (e.key === 'ArrowDown' || e.key === ' ') {
-                        e.preventDefault();
-                        const next = currentSlide + 1;
-                        if (next <= totalSlides) targetIndex = next - 1;
-                    } else if (e.key === 'ArrowUp') {
-                        e.preventDefault();
-                        const prev = currentSlide - 1;
-                        if (prev >= 1) targetIndex = prev - 1;
-                    }
-
-                    if (targetIndex !== null && slides[targetIndex]) {
-                        slides[targetIndex].scrollIntoView({ behavior: 'smooth' });
-                        setCurrentSlide(targetIndex + 1);
-                    }
-                };
-
-                window.addEventListener('keydown', handleKeyDown);
-                return () => window.removeEventListener('keydown', handleKeyDown);
-            }, [currentSlide]);
-
-            // Realtime Visibility Tracking Matrix Node
-            useEffect(() => {
-                const handleScroll = () => {
-                    const slides = document.querySelectorAll('[data-slide="true"]');
-                    const scrollPos = window.scrollY + window.innerHeight / 2;
-
-                    slides.forEach((slide, index) => {
-                        if (scrollPos >= slide.offsetTop && scrollPos < slide.offsetTop + slide.offsetHeight) {
-                            setCurrentSlide(index + 1);
-                        }
-                    });
-                };
-
-                window.addEventListener('scroll', handleScroll);
-                return () => window.removeEventListener('scroll', handleScroll);
-            }, []);
-
-            return React.createElement('div', { className: 'relative min-h-screen' },
-                
-                // FIXED BASE ATMOSPHERE BACKGROUND LAYER
-                React.createElement('div', { 
-                    className: 'fixed top-0 left-0 w-full h-screen -z-10 bg-cover bg-center bg-no-repeat bg-mask-gradient opacity-30 pointer-events-none',
-                    style: { backgroundImage: "url('
+    <section data-slide="true" class="min-h-screen px-4 md:px-12 flex items-center py-20">
+        <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5 space-y-6 reveal-element">
+                <div class="flex items-center gap-3">
+                    <div class="w-5 h-1 bg-[#D4D414]"></div>
+                    <span class="text-xs uppercase tracking-[0.15em] font-medium text-[#D4D414]">01 / SINCRETISMO NATALINO</span>
+                </div>
+                <h2 class="text-3xl md:text-
