@@ -1,34 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M. Prithivraj | Cloud Infrastructure Specialist</title>
+    <title>Mosaic Cultural — Intercâmbio Cultural</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        darkbg: '#030712',
-                        surface: '#090d16',
-                        accentCyan: '#06b6d4',
-                        accentEmerald: '#10b981',
-                        accentPurple: '#6366f1',
-                        cardBorder: 'rgba(255, 255, 255, 0.04)'
+                        background: '#080805',
+                        card: '#121212',
+                        border: '#2A2A2A',
+                        muted: '#888888',
+                        accent: '#D4D414'
                     },
                     fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace']
+                        sans: ['Figtree', 'sans-serif']
                     }
                 }
             }
@@ -36,294 +33,377 @@
     </script>
 
     <style>
-        ::-webkit-scrollbar {
-            width: 6px;
+        html {
+            scroll-behavior: smooth;
+            background-color: #080805;
         }
-        ::-webkit-scrollbar-track {
-            background: #030712;
+        body {
+            font-family: 'Figtree', sans-serif;
+            overflow-x: hidden;
+            background-color: #080805;
+            color: #FFFFFF;
         }
-        ::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
+        
+        /* Master Glassmorphism Blueprint Specifications */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #06b6d4;
+
+        /* Custom Scrollbar Stripping Logic */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
         }
-        .bento-card {
-            background: linear-gradient(145deg, rgba(9, 13, 22, 0.6) 0%, rgba(17, 24, 39, 0.4) 100%);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
-        .bento-card:hover {
-            border-color: rgba(6, 182, 212, 0.3);
-            box-shadow: 0 20px 40px -15px rgba(6, 182, 212, 0.07);
-            transform: translateY(-2px);
+
+        /* Precision Clip Mask Setup */
+        .bg-mask-gradient {
+            mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent);
+            -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent);
         }
-        .tech-tag {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.04);
+
+        /* Fluid Presentation Animation Engine via CSS Hardware Acceleration */
+        .reveal-node {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
         }
+        
+        .reveal-node.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-1 { transition-delay: 100ms; }
+        .stagger-2 { transition-delay: 200ms; }
+        .stagger-3 { transition-delay: 300ms; }
+        .stagger-4 { transition-delay: 400ms; }
     </style>
 </head>
-<body class="bg-darkbg text-slate-300 antialiased font-sans min-h-screen py-12 px-4 relative overflow-x-hidden">
+<body class="relative min-h-screen">
 
-    <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
-        <div class="absolute top-[-10%] left-[20%] w-[600px] h-[600px] rounded-full bg-accentCyan/5 blur-[140px]"></div>
-        <div class="absolute bottom-[10%] right-[10%] w-[500px] h-[500px] rounded-full bg-accentPurple/5 blur-[160px]"></div>
+    <div class="fixed top-0 left-0 w-full h-screen -z-10 bg-cover bg-center bg-no-repeat bg-mask-gradient opacity-30 pointer-events-none"
+         style="background-image: url('https://images.unsplash.com/photo-1598284252498-999b7bbe8e90?w=3840&q=80');">
     </div>
 
-    <div class="max-w-5xl mx-auto space-y-6 relative z-10">
-        
-        <header class="bento-card p-6 sm:p-8 rounded-3xl relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-accentCyan/10 to-transparent rounded-bl-full pointer-events-none"></div>
+    <nav class="fixed top-4 left-0 w-full px-6 md:px-12 z-50 flex justify-between items-center">
+        <div class="glass-panel px-6 py-3 rounded-full flex items-center gap-2 font-medium tracking-wide text-sm">
+            <div class="w-2 h-2 rounded-full bg-[#D4D414]"></div>
+            MOSAIC CULTURAL
+        </div>
+        <div class="flex gap-3">
+            <div class="glass-panel px-5 py-3 rounded-full hidden sm:flex items-center gap-2 text-xs text-muted uppercase tracking-wider">
+                <span class="iconify text-base text-white" data-icon="solar:earth-linear"></span>
+                Tópicos Globais
+            </div>
+            <div id="slideCounter" class="glass-panel px-6 py-3 rounded-full font-mono text-xs tracking-widest text-[#D4D414]">
+                SLIDE 1 / 6
+            </div>
+        </div>
+    </nav>
+
+    <section data-slide="true" class="min-h-screen px-4 md:px-12 flex items-center pt-24 pb-12">
+        <div class="relative w-full h-[90vh] rounded-[2rem] overflow-hidden border border-border bg-card flex items-end p-8 md:p-16">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2944&auto=format&fit=crop"
+                 class="absolute inset-0 w-full h-full object-cover transform scale-105 opacity-60 -z-10" alt="Mundo Conectado">
+            <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent -z-10"></div>
             
-            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
-                <div class="space-y-3 w-full lg:w-auto">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 text-[11px] font-mono uppercase tracking-wider text-accentEmerald bg-accentEmerald/10 rounded-full border border-accentEmerald/20">
-                        <span class="w-1.5 h-1.5 rounded-full bg-accentEmerald animate-pulse"></span> SYSTEM_PIPELINE_STABLE
-                    </div>
-                    <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white font-sans">
-                        M. PRITHIVRAJ
-                    </h1>
-                    <div class="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-xs sm:text-sm tracking-wide">
-                        <span class="text-accentCyan font-bold">&gt;_ DEVOPS INFRASTRUCTURE ENGINEER</span>
-                        <span class="text-slate-600 hidden sm:inline">|</span>
-                        <span class="text-slate-400 flex items-center gap-1.5">
-                            <i class="fa-solid fa-location-dot text-slate-500"></i> Mettur Dam, Tamilnadu
-                        </span>
-                    </div>
-                    
-                    <div class="flex flex-wrap gap-x-4 gap-y-1.5 pt-1 font-mono text-[11px] text-slate-400">
-                        <a href="mailto:prithiv6380407352@gmail.com" class="hover:text-accentCyan transition-colors flex items-center gap-1.5">
-                            <i class="fa-solid fa-envelope text-slate-500"></i> prithiv6380407352@gmail.com
-                        </a>
-                        <span class="text-slate-700 hidden sm:inline">•</span>
-                        <a href="tel:+916380407352" class="hover:text-accentCyan transition-colors flex items-center gap-1.5">
-                            <i class="fa-solid fa-phone text-slate-500"></i> +91 6380407352
-                        </a>
-                    </div>
+            <div class="max-w-4xl space-y-6 reveal-node active">
+                <div class="flex items-center gap-3">
+                    <div class="w-5 h-1 bg-[#D4D414]"></div>
+                    <span class="text-xs uppercase tracking-[0.15em] font-medium text-[#D4D414]">PANORAMA GLOBAL</span>
                 </div>
-                
-                <div class="flex flex-col w-full lg:w-auto gap-2.5 min-w-[280px]">
-                    <button onclick="navigator.clipboard.writeText('prithiv6380407352@gmail.com'); alert('Infrastructure email copied to clipboard.');" class="w-full justify-center flex items-center gap-2 px-4 py-2.5 bg-white hover:bg-accentCyan text-darkbg font-mono font-bold text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer shadow-lg shadow-white/5 group">
-                        <i class="fa-solid fa-copy group-hover:scale-110 transition-transform"></i> Copy Email ID
-                    </button>
-                    
-                    <a href="tel:+916380407352" class="w-full justify-center flex items-center gap-2 px-4 py-2.5 bg-slate-900/80 hover:bg-slate-800 border border-white/[0.04] text-slate-200 font-mono text-xs uppercase tracking-wider rounded-xl transition-all">
-                        <i class="fa-solid fa-phone text-accentEmerald"></i> Call Operator Node
-                    </a>
+                <h1 class="text-4xl md:text-[4.5rem] font-medium leading-[1.05] tracking-[-0.05em] uppercase">
+                    Intercâmbio Cultural: 5 Hábitos Estrangeiros no Brasil
+                </h1>
+                <p class="text-base md:text-lg text-muted font-light max-w-xl leading-relaxed">
+                    Uma jornada imersiva que explora a reconfiguração e a incorporação de traços culturais externos na essência do cotidiano brasileiro.
+                </p>
+            </div>
+        </div>
+    </section>
 
-                    <div class="h-[1px] bg-white/[0.06] my-0.5"></div>
-
-                    <div class="grid grid-cols-2 gap-2 text-xs font-mono">
-                        <a href="https://linkedin.com" target="_blank" class="text-center flex items-center justify-center gap-1.5 px-3 py-2 bg-slate-900/40 border border-white/[0.04] rounded-xl hover:border-accentCyan/30 hover:bg-slate-800/40 transition-colors">
-                            <i class="fa-brands fa-linkedin text-accentCyan"></i> LinkedIn
-                        </a>
-                        <a href="https://github.com" target="_blank" class="text-center flex items-center justify-center gap-1.5 px-3 py-2 bg-slate-900/40 border border-white/[0.04] rounded-xl hover:border-white/20 hover:bg-slate-800/40 transition-colors">
-                            <i class="fa-brands fa-github text-slate-400"></i> GitHub
-                        </a>
+    <section data-slide="true" class="min-h-screen px-4 md:px-12 flex items-center py-20">
+        <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5 space-y-6 reveal-node">
+                <div class="flex items-center gap-3">
+                    <div class="w-5 h-1 bg-[#D4D414]"></div>
+                    <span class="text-xs uppercase tracking-[0.15em] font-medium text-[#D4D414]">01 / SINCRETISMO NATALINO</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-medium tracking-[-0.025em] uppercase">Tradições de Natal</h2>
+                <p class="text-muted font-light leading-relaxed">
+                    Herdamos o rigor do pinheiro europeu e a imagem do Papai Noel do hemisfério norte. No entanto, adaptamos essas estéticas geladas ao calor tropical do nosso verão com criatividade e dinâmicas festivas únicas.
+                </p>
+            </div>
+            
+            <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-card border border-border p-6 rounded-xl hover:border-white/20 transition-all duration-300 reveal-node stagger-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="https://flagcdn.com/de.svg" class="w-6 h-6 rounded-full object-cover border border-white/10" alt="Alemanha">
+                        <span class="text-xs uppercase text-muted tracking-wider">Alemanha</span>
                     </div>
+                    <h4 class="text-base font-medium mb-2">Árvore de Natal</h4>
+                    <p class="text-xs text-muted font-light leading-relaxed">A tradição da montagem do pinheiro doméstico originou-se das práticas germânicas medievais.</p>
+                </div>
 
-                    <div class="grid grid-cols-2 gap-2 text-xs font-mono">
-                        <a href="your-resume-url-here.pdf" target="_blank" class="text-center flex items-center justify-center gap-1.5 px-3 py-2 bg-accentPurple/10 border border-accentPurple/20 rounded-xl hover:bg-accentPurple/20 transition-all text-purple-200 font-medium">
-                            <i class="fa-solid fa-eye text-accentPurple"></i> View CV
-                        </a>
-                        <a href="your-resume-url-here.pdf" download="M_Prithivraj_Resume.pdf" class="text-center flex items-center justify-center gap-1.5 px-3 py-2 bg-accentEmerald/10 border border-accentEmerald/20 rounded-xl hover:bg-accentEmerald/20 transition-all text-emerald-200 font-medium">
-                            <i class="fa-solid fa-download text-accentEmerald"></i> Download
-                        </a>
+                <div class="bg-card border border-border p-6 rounded-xl hover:border-white/20 transition-all duration-300 reveal-node stagger-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="https://flagcdn.com/gb.svg" class="w-6 h-6 rounded-full object-cover border border-white/10" alt="Reino Unido">
+                        <span class="text-xs uppercase text-muted tracking-wider">Reino Unido</span>
                     </div>
+                    <h4 class="text-base font-medium mb-2">Cartões Festivos</h4>
+                    <p class="text-xs text-muted font-light leading-relaxed">O hábito de enviar saudoções e designs impressos tomou força na era vitoriana britânica.</p>
+                </div>
+
+                <div class="bg-card border border-border p-6 rounded-xl hover:border-white/20 transition-all duration-300 reveal-node stagger-3">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="https://flagcdn.com/us.svg" class="w-6 h-6 rounded-full object-cover border border-white/10" alt="EUA">
+                        <span class="text-xs uppercase text-muted tracking-wider">EUA</span>
+                    </div>
+                    <h4 class="text-base font-medium mb-2">Papai Noel Moderno</h4>
+                    <p class="text-xs text-muted font-light leading-relaxed">A roupagem vermelha e o visual robusto atual foram consolidados pela publicidade norte-americana.</p>
+                </div>
+
+                <div class="bg-card border border-border p-6 rounded-xl hover:border-white/20 transition-all duration-300 reveal-node stagger-4">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="https://flagcdn.com/pt.svg" class="w-6 h-6 rounded-full object-cover border border-white/10" alt="Portugal">
+                        <span class="text-xs uppercase text-muted tracking-wider">Portugal</span>
+                    </div>
+                    <h4 class="text-base font-medium mb-2">A Ceia da Consoada</h4>
+                    <p class="text-xs text-muted font-light leading-relaxed">O consumo ritualístico do bacalhau e reuniões familiares à meia-noite provêm diretamente da Península Ibérica.</p>
                 </div>
             </div>
-        </header>
+        </div>
+    </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
-            
-            <div class="md:col-span-4 flex flex-col justify-between gap-4">
-                <div class="bento-card p-5 rounded-2xl flex flex-col justify-center flex-1 relative overflow-hidden group">
-                    <span class="text-3xl font-bold text-white font-mono tracking-tight group-hover:text-accentCyan transition-colors">1+</span>
-                    <span class="text-[10px] text-slate-500 uppercase tracking-widest font-mono mt-1">Years Experience</span>
+    <section data-slide="true" class="min-h-screen px-4 md:px-12 flex items-center py-20">
+        <div class="w-full space-y-12">
+            <div class="text-center max-w-2xl mx-auto space-y-4 reveal-node">
+                <div class="inline-flex items-center gap-3 justify-center">
+                    <div class="w-5 h-1 bg-[#D4D414]"></div>
+                    <span class="text-xs uppercase tracking-[0.15em] font-medium text-[#D4D414]">02 / EVOLUÇÃO PALATAR</span>
                 </div>
-                <div class="bento-card p-5 rounded-2xl flex flex-col justify-center flex-1 relative overflow-hidden group">
-                    <span class="text-3xl font-bold text-accentCyan font-mono tracking-tight">10+</span>
-                    <span class="text-[10px] text-slate-500 uppercase tracking-widest font-mono mt-1">AWS Deployments</span>
-                </div>
-                <div class="bento-card p-5 rounded-2xl flex flex-col justify-center flex-1 relative overflow-hidden group">
-                    <span class="text-3xl font-bold text-accentEmerald font-mono tracking-tight">99.9%</span>
-                    <span class="text-[10px] text-slate-500 uppercase tracking-widest font-mono mt-1">SLA Availability</span>
-                </div>
+                <h2 class="text-3xl md:text-5xl font-medium tracking-[-0.025em] uppercase">Gastronomia Fusão</h2>
+                <p class="text-muted text-sm font-light">A reinterpretação culinária como pilar central da nossa soberania de sabores.</p>
             </div>
-
-            <div class="md:col-span-8 bento-card rounded-2xl overflow-hidden flex flex-col h-full">
-                <div class="bg-slate-950/80 px-4 py-2.5 border-b border-white/[0.03] flex items-center justify-between">
-                    <div class="flex items-center gap-2">
-                        <span class="w-2.5 h-2.5 rounded-full bg-red-500/70"></span>
-                        <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/70"></span>
-                        <span class="w-2.5 h-2.5 rounded-full bg-green-500/70"></span>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="group bg-card border border-border p-8 rounded-2xl hover:border-[#D4D414]/30 transition-all duration-300 flex flex-col justify-between h-full reveal-node stagger-1">
+                    <div class="space-y-4">
+                        <div class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-xl text-[#D4D414] group-hover:scale-110 transition-transform duration-300">
+                            <span class="iconify" data-icon="solar:leaf-linear"></span>
+                        </div>
+                        <h3 class="text-lg font-medium">Origem Japonesa</h3>
+                        <span class="text-xs text-[#D4D414] uppercase tracking-widest block">Sushis adaptados</span>
+                        <p class="text-sm text-muted font-light leading-relaxed pt-2">A introdução de frutas tropicais como manga e o uso extensivo de cream cheese transformaram os sushis tradicionais em criações puramente brasileiras.</p>
                     </div>
-                    <span class="font-mono text-[10px] text-slate-500 tracking-wider">profile_summary</span>
-                    <div class="w-10"></div>
                 </div>
-                <div class="p-6 font-mono text-xs sm:text-sm space-y-4 flex-1 bg-surface/30 flex flex-col justify-center">
-                    <div>
-                        <p class="text-slate-500">&gt; profile_summary</p>
-                        <p class="text-slate-300 leading-relaxed font-sans text-sm mt-2">
-                            Proactive and results-driven <span class="text-white font-medium border-b border-accentCyan/30">Junior DevOps Engineer</span> with hands-on experience architecting automated CI/CD pipelines, containerizing microservices, and managing core cloud infrastructure. Proven capability in optimizing application lifecycles using <span class="text-accentCyan font-semibold">Jenkins</span>, while deploying highly scalable container workflows across <span class="text-accentCyan font-semibold">Amazon ECS/ECR</span>. Recognized for a strong systems-engineering mindset, with distinct proficiency in managing enterprise DNS configurations and high-availability AWS nodes.
-                        </p>
+
+                <div class="group bg-card border border-border p-8 rounded-2xl hover:border-[#D4D414]/30 transition-all duration-300 flex flex-col justify-between h-full reveal-node stagger-2">
+                    <div class="space-y-4">
+                        <div class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-xl text-[#D4D414] group-hover:scale-110 transition-transform duration-300">
+                            <span class="iconify" data-icon="solar:earth-linear"></span>
+                        </div>
+                        <h3 class="text-lg font-medium">Herança Portuguesa</h3>
+                        <span class="text-xs text-[#D4D414] uppercase tracking-widest block">A Doçaria Conventual</span>
+                        <p class="text-sm text-muted font-light leading-relaxed pt-2">A base de ovos e açúcar dos doces de Lisboa fundeu-se perfeitamente com os ingredientes locais, dando origem ao icônico Quindim.</p>
+                    </div>
+                </div>
+
+                <div class="group bg-card border border-border p-8 rounded-2xl hover:border-[#D4D414]/30 transition-all duration-300 flex flex-col justify-between h-full reveal-node stagger-3">
+                    <div class="space-y-4">
+                        <div class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-xl text-[#D4D414] group-hover:scale-110 transition-transform duration-300">
+                            <span class="iconify" data-icon="solar:alt-arrow-down-linear"></span>
+                        </div>
+                        <h3 class="text-lg font-medium">A Mistura Local</h3>
+                        <span class="text-xs text-[#D4D414] uppercase tracking-widest block">Transformação Geral</span>
+                        <p class="text-sm text-muted font-light leading-relaxed pt-2">Elementos globais como as pizzas italianas ganharam bordas recheadas extravagantes e coberturas doces inéditas sem paralelos no mundo.</p>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <section class="bento-card p-6 sm:p-8 rounded-3xl space-y-6">
-            <h2 class="text-lg font-bold text-white flex items-center gap-2.5 font-sans tracking-tight">
-                <i class="fa-solid fa-layer-group text-accentCyan text-base"></i> Tooling & Cloud Ecosystem
+    <section data-slide="true" class="min-h-screen px-4 md:px-12 flex items-center py-20">
+        <div class="w-full space-y-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 reveal-node">
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-5 h-1 bg-[#D4D414]"></div>
+                        <span class="text-xs uppercase tracking-[0.15em] font-medium text-[#D4D414]">03 / CULTURA POPULAR RECORRENTE</span>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-medium tracking-[-0.025em] uppercase">Festa Junina</h2>
+                </div>
+                <p class="text-muted text-sm font-light max-w-md">
+                    Arraste horizontalmente para conferir as origens estéticas adaptadas nas nossas maiores festividades do meio do ano.
+                </p>
+            </div>
+            
+            <div class="flex gap-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-6 reveal-node">
+                <div class="min-w-[300px] sm:min-w-[400px] h-[520px] relative rounded-[2rem] overflow-hidden border border-border flex flex-col justify-end p-8 snap-center group shrink-0">
+                    <img src="https://images.unsplash.com/photo-1560002130-9ebf30e6ebf3?q=80&w=800&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-70 -z-10" alt="Santos Populares">
+                    <div class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent -z-10"></div>
+                    <div class="absolute top-6 left-6 glass-panel px-4 py-2 rounded-full flex items-center gap-2">
+                        <img src="https://flagcdn.com/pt.svg" class="w-4 h-4 rounded-full object-cover" alt="Portugal">
+                        <span class="text-[10px] tracking-widest text-white uppercase font-mono">Portugal</span>
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="text-xl font-medium uppercase tracking-wide text-white">Santos Populares</h3>
+                        <p class="text-xs text-muted font-light leading-relaxed">As comemorações a São João, Santo Antônio e São Pedro vieram diretamente das celebrações ibéricas europeias.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-[300px] sm:min-w-[400px] h-[520px] relative rounded-[2rem] overflow-hidden border border-border flex flex-col justify-end p-8 snap-center group shrink-0">
+                    <img src="https://images.unsplash.com/photo-1541818292881-807d4c22cc5c?q=80&w=800&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-70 -z-10" alt="A Quadrilha">
+                    <div class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent -z-10"></div>
+                    <div class="absolute top-6 left-6 glass-panel px-4 py-2 rounded-full flex items-center gap-2">
+                        <img src="https://flagcdn.com/fr.svg" class="w-4 h-4 rounded-full object-cover" alt="França">
+                        <span class="text-[10px] tracking-widest text-white uppercase font-mono">França</span>
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="text-xl font-medium uppercase tracking-wide text-white">A Quadrilha</h3>
+                        <p class="text-xs text-muted font-light leading-relaxed">Derivada da "quadrille" francesa, uma dança de salão aristocrática do século XVIII que foi completamente ressignificada pelo povo do campo.</p>
+                    </div>
+                </div>
+
+                <div class="min-w-[300px] sm:min-w-[400px] h-[520px] relative rounded-[2rem] overflow-hidden border border-border flex flex-col justify-end p-8 snap-center group shrink-0">
+                    <img src="https://images.unsplash.com/photo-1623075936495-2ba1dcfa21dd?q=80&w=800&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-70 -z-10" alt="Toque Brasileiro">
+                    <div class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent -z-10"></div>
+                    <div class="absolute top-6 left-6 glass-panel px-4 py-2 rounded-full flex items-center gap-2">
+                        <img src="https://flagcdn.com/br.svg" class="w-4 h-4 rounded-full object-cover" alt="Brasil">
+                        <span class="text-[10px] tracking-widest text-white uppercase font-mono">Brasil</span>
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="text-xl font-medium uppercase tracking-wide text-white">Toque Brasileiro</h3>
+                        <p class="text-xs text-muted font-light leading-relaxed">Incorporamos os ritmos nordestinos, as comidas à base de milho e a fogueira, criando uma das maiores forças identitárias do país.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section data-slide="true" class="min-h-screen px-4 md:px-12 flex items-center py-20">
+        <div class="w-full space-y-12">
+            <div class="flex flex-col items-center text-center space-y-3 reveal-node">
+                <div class="flex items-center gap-3">
+                    <div class="w-5 h-1 bg-[#D4D414]"></div>
+                    <span class="text-xs uppercase tracking-[0.15em] font-medium text-[#D4D414]">04 / MEDICINA ANCESTRAL</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-medium tracking-[-0.025em] uppercase">Saberes Tradicionais</h2>
+                <p class="text-muted text-sm font-light max-w-xl">O uso de ervas medicinais conecta o conhecimento científico ocidental às ricas heranças indígenas e matrizes africanas.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-card border border-border p-10 rounded-[2rem] flex flex-col justify-between space-y-6 hover:border-white/10 transition-colors reveal-node stagger-1">
+                    <div class="space-y-2">
+                        <span class="text-[10px] tracking-wider text-[#D4D414] uppercase font-mono">Tradição do Oriente</span>
+                        <h3 class="text-lg font-medium text-white">Fitoterapia Chinesa</h3>
+                    </div>
+                    <div class="w-8 h-[1px] bg-border"></div>
+                    <p class="text-xs text-muted font-light leading-relaxed">A acupuntura e a herbolária integraram-se às práticas terapêuticas brasileiras, preenchendo lacunas de cuidados holísticos com o corpo.</p>
+                </div>
+
+                <div class="bg-card border border-border p-10 rounded-[2rem] flex flex-col justify-between space-y-6 hover:border-white/10 transition-colors reveal-node stagger-2">
+                    <div class="space-y-2">
+                        <span class="text-[10px] tracking-wider text-[#D4D414] uppercase font-mono">Conexão Nativa</span>
+                        <h3 class="text-lg font-medium text-white">Conhecimento Nativo</h3>
+                    </div>
+                    <div class="w-8 h-[1px] bg-border"></div>
+                    <p class="text-xs text-muted font-light leading-relaxed">O domínio profundo das espécies amazônicas pelos povos originários forma a verdadeira base farmacológica natural do país.</p>
+                </div>
+
+                <div class="bg-card border border-border p-10 rounded-[2rem] flex flex-col justify-between space-y-6 hover:border-white/10 transition-colors reveal-node stagger-3">
+                    <div class="space-y-2">
+                        <span class="text-[10px] tracking-wider text-[#D4D414] uppercase font-mono">Matriz Afro</span>
+                        <h3 class="text-lg font-medium text-white">Influência Africana</h3>
+                    </div>
+                    <div class="w-8 h-[1px] bg-border"></div>
+                    <p class="text-xs text-muted font-light leading-relaxed">Os saberes sobre folhas sagradas e rituais de cura trazidos com a diáspora moldaram de forma definitiva as farmácias populares das comunidades.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section data-slide="true" class="min-h-screen px-4 md:px-12 flex items-center justify-center relative py-20 text-center">
+        <div class="absolute w-[300px] sm:w-[800px] h-[300px] sm:h-[800px] rounded-full bg-[#D4D414]/5 blur-[120px] -z-10 pointer-events-none"></div>
+        
+        <div class="max-w-3xl space-y-6 reveal-node">
+            <div class="inline-flex items-center gap-3 justify-center">
+                <div class="w-5 h-1 bg-[#D4D414]"></div>
+                <span class="text-xs uppercase tracking-[0.15em] font-medium text-[#D4D414]">05 / SÍNTESE FINAL</span>
+            </div>
+            <h2 class="text-3xl md:text-6xl font-medium tracking-[-0.03em] uppercase leading-tight">
+                O Brasil é um mosaico cultural.
             </h2>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div class="p-4 bg-slate-950/40 border border-white/[0.02] rounded-2xl space-y-3 hover:border-white/[0.06] transition-colors">
-                    <div class="flex items-center gap-2">
-                        <i class="devicon-amazonwebservices-wordmark colored text-xl"></i> 
-                        <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 font-bold">AWS Core Cloud Engine</span>
-                    </div>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">EC2</span>
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">S3</span>
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">CloudFront</span>
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">Lambda</span>
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">Route 53</span>
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">IAM</span>
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">CloudWatch</span>
-                    </div>
-                </div>
+            <p class="text-muted font-light text-base md:text-lg leading-relaxed max-w-xl mx-auto">
+                Nenhum hábito importado permanece idêntico aqui. Tudo passa por um processo profundo de <strong class="font-bold text-white">adaptação</strong>, sincretismo e celebração local, enriquecendo continuamente nossa identidade nacional singular.
+            </p>
+        </div>
+    </section>
 
-                <div class="p-4 bg-slate-950/40 border border-white/[0.02] rounded-2xl space-y-3 hover:border-white/[0.06] transition-colors">
-                    <div class="flex items-center gap-2">
-                        <i class="devicon-jenkins-line colored text-xl"></i> 
-                        <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 font-bold">CI/CD Pipeline Frameworks</span>
-                    </div>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-white">Jenkins Engine</span>
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">Bitbucket Versioning</span>
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">Git Hooks</span>
-                    </div>
-                </div>
+    <footer class="sticky bottom-0 left-0 w-full bg-background border-t border-border py-4 px-6 md:px-12 z-50 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-muted">
+        <div class="flex items-center gap-2 font-mono text-[10px] tracking-widest uppercase">
+            <span class="iconify text-sm text-[#D4D414]" data-icon="solar:keyboard-linear"></span>
+            Use as setas do teclado para navegar
+        </div>
+        <div class="font-light text-[11px]">
+            © 2026 Mosaic Cultural. Todos os direitos reservados.
+        </div>
+    </footer>
 
-                <div class="p-4 bg-slate-950/40 border border-white/[0.02] rounded-2xl space-y-3 hover:border-white/[0.06] transition-colors">
-                    <div class="flex items-center gap-2">
-                        <i class="devicon-docker-plain colored text-xl"></i> 
-                        <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 font-bold">Micro-Containerization</span>
-                    </div>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">Amazon ECS Clusters</span>
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">Elastic Container Registry (ECR)</span>
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">Dockerfiles</span>
-                    </div>
-                </div>
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 6;
+        const slides = document.querySelectorAll('[data-slide="true"]');
+        const counterElement = document.getElementById('slideCounter');
 
-                <div class="p-4 bg-slate-950/40 border border-white/[0.02] rounded-2xl space-y-3 hover:border-white/[0.06] transition-colors">
-                    <div class="flex items-center gap-2">
-                        <i class="devicon-cloudflare-plain colored text-xl"></i> 
-                        <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 font-bold">DNS Edge & Gateway Protection</span>
-                    </div>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">Cloudflare Proxy Mappings</span>
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">GoDaddy Systems</span>
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">Spaceship Architecture</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+        // Clean Architecture Keyboard Navigation Loops
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowDown' || e.key === ' ') {
+                e.preventDefault();
+                if (currentSlide < totalSlides) {
+                    currentSlide++;
+                    slides[currentSlide - 1].scrollIntoView({ behavior: 'smooth' });
+                }
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                if (currentSlide > 1) {
+                    currentSlide--;
+                    slides[currentSlide - 1].scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
 
-        <section class="bento-card p-6 sm:p-8 rounded-3xl space-y-6">
-            <div class="border-b border-white/[0.04] pb-4">
-                <h2 class="text-lg font-bold text-white flex items-center gap-2.5 font-sans tracking-tight">
-                    <i class="fa-solid fa-server text-accentCyan text-base"></i> Operational Pipeline Footprint
-                </h2>
-            </div>
-            
-            <div class="space-y-8 relative pl-4 border-l border-white/[0.04] ml-2">
-                <div class="relative">
-                    <span class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-accentEmerald ring-4 ring-accentEmerald/20 animate-pulse"></span>
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                        <div>
-                            <h3 class="text-base font-bold text-white">DevOps Infrastructure Engineer</h3>
-                            <p class="text-[11px] text-accentEmerald font-mono tracking-wider uppercase mt-0.5">Biovus Blockchain Technologies Pvt Ltd</p>
-                        </div>
-                        <span class="text-[10px] font-mono font-semibold px-2.5 py-0.5 bg-accentEmerald/10 text-accentEmerald rounded-full border border-accentEmerald/20 self-start sm:self-center">Present • Salem</span>
-                    </div>
-                    <ul class="mt-3.5 space-y-2 text-sm text-slate-400 font-sans">
-                        <li class="flex items-start gap-2.5">
-                            <span class="text-accentEmerald font-mono text-xs mt-0.5">■</span>
-                            <span>Architecting secure cryptographic platform pipelines and scaling internal node availability matrices.</span>
-                        </li>
-                    </ul>
-                </div>
+        // High-Performance Native Intersection Observer for Scrolling and Animating
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -40% 0px',
+            threshold: 0.1
+        };
 
-                <div class="relative">
-                    <span class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-slate-700"></span>
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                        <div>
-                            <h3 class="text-base font-bold text-slate-300">Junior DevOps Engineer</h3>
-                            <p class="text-[11px] text-slate-500 font-mono tracking-wider uppercase mt-0.5">Infrastructure Engineering & Automations</p>
-                        </div>
-                        <span class="text-[10px] font-mono font-semibold px-2.5 py-0.5 bg-slate-950 text-slate-500 rounded-full border border-white/[0.04] self-start sm:self-center">July 2025 – July 2026</span>
-                    </div>
+        const slideObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Update Active Slide Metric Index
+                    const slideIndex = Array.from(slides).indexOf(entry.target) + 1;
+                    currentSlide = slideIndex;
+                    counterElement.textContent = `SLIDE ${currentSlide} / ${totalSlides}`;
                     
-                    <ul class="mt-3.5 space-y-2.5 text-sm text-slate-400 font-sans">
-                        <li class="flex items-start gap-2.5">
-                            <span class="text-accentCyan font-mono text-xs mt-0.5">■</span>
-                            <span>Managed system integration workflows provisioning standard deployment tracks via programmatic Jenkins pipelines connected with Bitbucket hooks.</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <span class="text-accentCyan font-mono text-xs mt-0.5">■</span>
-                            <span>Successfully packaged application dependencies into Docker images to serve over Amazon ECS clusters via automated ECR image pulls.</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <span class="text-accentCyan font-mono text-xs mt-0.5">■</span>
-                            <span>Integrated AWS infrastructure mechanisms covering EC2 instance tracking, static asset hosting with Amazon S3, and sub-second network cache tuning via CloudFront.</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <span class="text-accentCyan font-mono text-xs mt-0.5">■</span>
-                            <span>Engineered robust DNS network logic mappings managing routing registers across Route 53 zones, Cloudflare security protections, and registrar domains.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+                    // Trigger Internal Graphic Element Reveals
+                    const revealNodes = entry.target.querySelectorAll('.reveal-node');
+                    revealNodes.forEach(node => node.classList.add('active'));
+                }
+            });
+        }, observerOptions);
 
-        <section class="bento-card p-6 sm:p-8 rounded-3xl space-y-6">
-            <h2 class="text-lg font-bold text-white flex items-center gap-2.5 font-sans tracking-tight">
-                <i class="fa-solid fa-graduation-cap text-accentCyan text-base"></i> Certifications & Validation Nodes
-            </h2>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div class="p-4 bg-slate-950/40 border border-white/[0.02] rounded-2xl flex items-center gap-3.5 hover:border-white/[0.06] transition-colors">
-                    <div class="w-9 h-9 rounded-xl bg-accentCyan/10 flex items-center justify-center text-accentCyan text-sm"><i class="fa-solid fa-shield-halved"></i></div>
-                    <div>
-                        <h4 class="font-bold text-slate-200 text-xs sm:text-sm">IBM AWS Cloud</h4>
-                        <p class="text-[10px] text-slate-500 font-mono">SLA Academy, Chennai</p>
-                    </div>
-                </div>
-                <div class="p-4 bg-slate-950/40 border border-white/[0.02] rounded-2xl flex items-center gap-3.5 hover:border-white/[0.06] transition-colors">
-                    <div class="w-9 h-9 rounded-xl bg-accentPurple/10 flex items-center justify-center text-accentPurple text-sm"><i class="fa-solid fa-graduation-cap"></i></div>
-                    <div>
-                        <h4 class="font-bold text-slate-200 text-xs sm:text-sm">B.E. (EEE)</h4>
-                        <p class="text-[10px] text-slate-500 font-mono">Engineering Graduate</p>
-                    </div>
-                </div>
-                <div class="p-4 bg-slate-950/40 border border-white/[0.02] rounded-2xl flex items-center gap-3.5 hover:border-white/[0.06] transition-colors">
-                    <div class="w-9 h-9 rounded-xl bg-accentEmerald/10 flex items-center justify-center text-accentEmerald text-sm"><i class="fa-solid fa-network-wired"></i></div>
-                    <div>
-                        <h4 class="font-bold text-slate-200 text-xs sm:text-sm">Diploma (EEE)</h4>
-                        <p class="text-[10px] text-slate-500 font-mono">Technical Education</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </div>
+        slides.forEach(slide => slideObserver.observe(slide));
+    </script>
 
 </body>
 </html>
