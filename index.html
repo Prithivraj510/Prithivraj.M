@@ -12,7 +12,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <script>
         tailwind.config = {
@@ -62,11 +61,6 @@
             color: #9ED8FF;
         }
 
-        /* Wide Display Typography Utilities */
-        .text-wide-tracking {
-            letter-spacing: 0.18em;
-        }
-
         /* Animated Custom Borders via Conic Gradients */
         .conic-border-blue {
             position: relative;
@@ -105,40 +99,15 @@
         }
     </style>
 </head>
-<body class="bg-bgDark text-fgLight font-sans antialiased relative min-h-screen selection:bg-primaryBlue/10 selection:text-primaryBlue overflow-x-hidden">
+<body class="bg-bgDark text-fgLight font-sans antialiased relative min-h-screen overflow-x-hidden">
 
-    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-70">
-        <canvas id="perspectiveGrid" class="absolute inset-0 w-full h-full opacity-40 mix-blend-screen"></canvas>
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-60">
+        <canvas id="perspectiveGrid" class="absolute inset-0 w-full h-full mix-blend-screen"></canvas>
         
-        <div class="absolute top-[15%] left-[25%] w-[700px] h-[700px] rounded-full bg-primaryBlue/5 blur-[160px]"></div>
-        <div class="absolute bottom-[20%] right-[15%] w-[600px] h-[600px] rounded-full bg-accentGold/5 blur-[180px]"></div>
+        <div class="absolute top-[15%] left-[25%] w-[600px] h-[600px] rounded-full bg-primaryBlue/5 blur-[140px]"></div>
+        <div class="absolute bottom-[20%] right-[15%] w-[500px] h-[500px] rounded-full bg-accentGold/5 blur-[160px]"></div>
     </div>
 
-    <nav class="fixed top-0 inset-x-0 h-16 bg-bgDark/85 backdrop-blur-md border-b border-borderDark/80 flex items-center justify-between px-6 sm:px-12 z-50">
+    <nav class="fixed top-0 inset-x-0 h-16 bg-bgDark/90 backdrop-blur-md border-b border-borderDark flex items-center justify-between px-6 sm:px-12 z-50">
         <div class="flex items-center gap-3">
-            <svg class="w-5 h-5 text-primaryBlue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="5 17 12 12 19 17"></polyline>
-                <polyline points="5 12 12 7 19 12"></polyline>
-                <polyline points="5 7 12 2 19 7"></polyline>
-            </svg>
-            <span class="font-display text-xs text-wide-tracking font-medium tracking-widest text-fgLight">PRITHIVRAJ // Node</span>
-        </div>
-        
-        <div class="hidden md:flex items-center gap-6 font-mono text-[10px] uppercase tracking-wider text-textMuted">
-            <a href="#summary" class="hover:text-primaryBlue transition-colors">Summary</a>
-            <span class="text-borderLight">|</span>
-            <a href="#ecosystem" class="hover:text-primaryBlue transition-colors">Ecosystem</a>
-            <span class="text-borderLight">|</span>
-            <a href="#pipeline" class="hover:text-primaryBlue transition-colors">Pipeline Matrix</a>
-            <span class="text-borderLight">|</span>
-            <a href="#validations" class="hover:text-primaryBlue transition-colors">Validations</a>
-        </div>
-
-        <button onclick="navigator.clipboard.writeText('prithiv6380407352@gmail.com'); alert('Infrastructure ID copied.');" class="font-display text-[9px] uppercase tracking-widest bg-primaryMuted text-fgLight border border-borderLight hover:text-accentGold hover:border-accentGold/50 px-4 py-2 transition-all duration-300 rounded-sm">
-            Launch Connection
-        </button>
-    </nav>
-
-    <div class="absolute left-1/2 -translate-x-1/2 w-[1px] h-full bg-borderDark/50 z-0 hidden lg:block"></div>
-
-    <main class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 pt-32 pb-4
+            <svg class="w-4 h-4 text-primaryBlue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
