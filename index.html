@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M. Prithivraj | Cloud Infrastructure Specialist</title>
-    
+    <title>M. Prithivraj | DevOps & Cloud Infrastructure Engineer</title>
+    <meta name="description" content="M. Prithivraj — DevOps Infrastructure Engineer specializing in AWS, Jenkins CI/CD pipelines, Docker/ECS containerization, and enterprise DNS management.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="M. Prithivraj | DevOps & Cloud Infrastructure Engineer">
+    <meta property="og:description" content="Portfolio of M. Prithivraj — DevOps Engineer skilled in AWS, CI/CD, Docker, and cloud infrastructure.">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23030712'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='%2306b6d4' font-family='monospace'%3E%3E_%3C/text%3E%3C/svg%3E">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -36,19 +44,11 @@
     </script>
 
     <style>
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #030712;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #06b6d4;
-        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #030712; }
+        ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
+
         .bento-card {
             background: linear-gradient(145deg, rgba(9, 13, 22, 0.6) 0%, rgba(17, 24, 39, 0.4) 100%);
             backdrop-filter: blur(16px);
@@ -65,6 +65,28 @@
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.04);
         }
+
+        /* Scroll-reveal: sections fade/rise in as they enter view */
+        .reveal {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Respect users who prefer reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; transition: none; }
+            .bento-card { transition: none; }
+        }
+
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid #06b6d4;
+            outline-offset: 2px;
+        }
     </style>
 </head>
 <body class="bg-darkbg text-slate-300 antialiased font-sans min-h-screen py-12 px-4 relative overflow-x-hidden">
@@ -75,10 +97,10 @@
     </div>
 
     <div class="max-w-5xl mx-auto space-y-6 relative z-10">
-        
-        <header class="bento-card p-6 sm:p-8 rounded-3xl relative overflow-hidden">
+
+        <header id="top" class="bento-card p-6 sm:p-8 rounded-3xl relative overflow-hidden">
             <div class="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-accentCyan/10 to-transparent rounded-bl-full pointer-events-none"></div>
-            
+
             <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
                 <div class="space-y-3 w-full lg:w-auto">
                     <div class="inline-flex items-center gap-2 px-3 py-1 text-[11px] font-mono uppercase tracking-wider text-accentEmerald bg-accentEmerald/10 rounded-full border border-accentEmerald/20">
@@ -94,7 +116,7 @@
                             <i class="fa-solid fa-location-dot text-slate-500"></i> Mettur Dam, Tamilnadu
                         </span>
                     </div>
-                    
+
                     <div class="flex flex-wrap gap-x-4 gap-y-1.5 pt-1 font-mono text-[11px] text-slate-400">
                         <a href="mailto:prithiv6380407352@gmail.com" class="hover:text-accentCyan transition-colors flex items-center gap-1.5">
                             <i class="fa-solid fa-envelope text-slate-500"></i> prithiv6380407352@gmail.com
@@ -105,12 +127,12 @@
                         </a>
                     </div>
                 </div>
-                
+
                 <div class="flex flex-col w-full lg:w-auto gap-2.5 min-w-[280px]">
-                    <button onclick="navigator.clipboard.writeText('prithiv6380407352@gmail.com'); alert('Infrastructure email copied to clipboard.');" class="w-full justify-center flex items-center gap-2 px-4 py-2.5 bg-white hover:bg-accentCyan text-darkbg font-mono font-bold text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer shadow-lg shadow-white/5 group">
-                        <i class="fa-solid fa-copy group-hover:scale-110 transition-transform"></i> Copy Email ID
+                    <button onclick="navigator.clipboard.writeText('prithiv6380407352@gmail.com'); this.querySelector('span').textContent='Copied!'; setTimeout(()=>{this.querySelector('span').textContent='Copy Email ID'},1500);" aria-label="Copy email address to clipboard" class="w-full justify-center flex items-center gap-2 px-4 py-2.5 bg-white hover:bg-accentCyan text-darkbg font-mono font-bold text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer shadow-lg shadow-white/5 group">
+                        <i class="fa-solid fa-copy group-hover:scale-110 transition-transform"></i> <span>Copy Email ID</span>
                     </button>
-                    
+
                     <a href="tel:+916380407352" class="w-full justify-center flex items-center gap-2 px-4 py-2.5 bg-slate-900/80 hover:bg-slate-800 border border-white/[0.04] text-slate-200 font-mono text-xs uppercase tracking-wider rounded-xl transition-all">
                         <i class="fa-solid fa-phone text-accentEmerald"></i> Call Operator Node
                     </a>
@@ -118,16 +140,19 @@
                     <div class="h-[1px] bg-white/[0.06] my-0.5"></div>
 
                     <div class="grid grid-cols-2 gap-2 text-xs font-mono">
-                        <a href="https://linkedin.com" target="_blank" class="text-center flex items-center justify-center gap-1.5 px-3 py-2 bg-slate-900/40 border border-white/[0.04] rounded-xl hover:border-accentCyan/30 hover:bg-slate-800/40 transition-colors">
+                        <!-- TODO: replace with your real LinkedIn URL -->
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-center flex items-center justify-center gap-1.5 px-3 py-2 bg-slate-900/40 border border-white/[0.04] rounded-xl hover:border-accentCyan/30 hover:bg-slate-800/40 transition-colors">
                             <i class="fa-brands fa-linkedin text-accentCyan"></i> LinkedIn
                         </a>
-                        <a href="https://github.com" target="_blank" class="text-center flex items-center justify-center gap-1.5 px-3 py-2 bg-slate-900/40 border border-white/[0.04] rounded-xl hover:border-white/20 hover:bg-slate-800/40 transition-colors">
+                        <!-- TODO: replace with your real GitHub URL -->
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-center flex items-center justify-center gap-1.5 px-3 py-2 bg-slate-900/40 border border-white/[0.04] rounded-xl hover:border-white/20 hover:bg-slate-800/40 transition-colors">
                             <i class="fa-brands fa-github text-slate-400"></i> GitHub
                         </a>
                     </div>
 
                     <div class="grid grid-cols-2 gap-2 text-xs font-mono">
-                        <a href="your-resume-url-here.pdf" target="_blank" class="text-center flex items-center justify-center gap-1.5 px-3 py-2 bg-accentPurple/10 border border-accentPurple/20 rounded-xl hover:bg-accentPurple/20 transition-all text-purple-200 font-medium">
+                        <!-- TODO: replace with your real resume PDF link -->
+                        <a href="your-resume-url-here.pdf" target="_blank" rel="noopener noreferrer" class="text-center flex items-center justify-center gap-1.5 px-3 py-2 bg-accentPurple/10 border border-accentPurple/20 rounded-xl hover:bg-accentPurple/20 transition-all text-purple-200 font-medium">
                             <i class="fa-solid fa-eye text-accentPurple"></i> View CV
                         </a>
                         <a href="your-resume-url-here.pdf" download="M_Prithivraj_Resume.pdf" class="text-center flex items-center justify-center gap-1.5 px-3 py-2 bg-accentEmerald/10 border border-accentEmerald/20 rounded-xl hover:bg-accentEmerald/20 transition-all text-emerald-200 font-medium">
@@ -138,8 +163,8 @@
             </div>
         </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
-            
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch reveal">
+
             <div class="md:col-span-4 flex flex-col justify-between gap-4">
                 <div class="bento-card p-5 rounded-2xl flex flex-col justify-center flex-1 relative overflow-hidden group">
                     <span class="text-3xl font-bold text-white font-mono tracking-tight group-hover:text-accentCyan transition-colors">1+</span>
@@ -176,15 +201,15 @@
             </div>
         </div>
 
-        <section class="bento-card p-6 sm:p-8 rounded-3xl space-y-6">
+        <section class="bento-card p-6 sm:p-8 rounded-3xl space-y-6 reveal">
             <h2 class="text-lg font-bold text-white flex items-center gap-2.5 font-sans tracking-tight">
                 <i class="fa-solid fa-layer-group text-accentCyan text-base"></i> Tooling & Cloud Ecosystem
             </h2>
-            
+
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="p-4 bg-slate-950/40 border border-white/[0.02] rounded-2xl space-y-3 hover:border-white/[0.06] transition-colors">
                     <div class="flex items-center gap-2">
-                        <i class="devicon-amazonwebservices-wordmark colored text-xl"></i> 
+                        <i class="devicon-amazonwebservices-wordmark colored text-xl"></i>
                         <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 font-bold">AWS Core Cloud Engine</span>
                     </div>
                     <div class="flex flex-wrap gap-1.5">
@@ -200,7 +225,7 @@
 
                 <div class="p-4 bg-slate-950/40 border border-white/[0.02] rounded-2xl space-y-3 hover:border-white/[0.06] transition-colors">
                     <div class="flex items-center gap-2">
-                        <i class="devicon-jenkins-line colored text-xl"></i> 
+                        <i class="devicon-jenkins-line colored text-xl"></i>
                         <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 font-bold">CI/CD Pipeline Frameworks</span>
                     </div>
                     <div class="flex flex-wrap gap-1.5">
@@ -212,7 +237,7 @@
 
                 <div class="p-4 bg-slate-950/40 border border-white/[0.02] rounded-2xl space-y-3 hover:border-white/[0.06] transition-colors">
                     <div class="flex items-center gap-2">
-                        <i class="devicon-docker-plain colored text-xl"></i> 
+                        <i class="devicon-docker-plain colored text-xl"></i>
                         <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 font-bold">Micro-Containerization</span>
                     </div>
                     <div class="flex flex-wrap gap-1.5">
@@ -224,7 +249,7 @@
 
                 <div class="p-4 bg-slate-950/40 border border-white/[0.02] rounded-2xl space-y-3 hover:border-white/[0.06] transition-colors">
                     <div class="flex items-center gap-2">
-                        <i class="devicon-cloudflare-plain colored text-xl"></i> 
+                        <i class="devicon-cloudflare-plain colored text-xl"></i>
                         <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 font-bold">DNS Edge & Gateway Protection</span>
                     </div>
                     <div class="flex flex-wrap gap-1.5">
@@ -236,13 +261,13 @@
             </div>
         </section>
 
-        <section class="bento-card p-6 sm:p-8 rounded-3xl space-y-6">
+        <section class="bento-card p-6 sm:p-8 rounded-3xl space-y-6 reveal">
             <div class="border-b border-white/[0.04] pb-4">
                 <h2 class="text-lg font-bold text-white flex items-center gap-2.5 font-sans tracking-tight">
                     <i class="fa-solid fa-server text-accentCyan text-base"></i> Operational Pipeline Footprint
                 </h2>
             </div>
-            
+
             <div class="space-y-8 relative pl-4 border-l border-white/[0.04] ml-2">
                 <div class="relative">
                     <span class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-accentEmerald ring-4 ring-accentEmerald/20 animate-pulse"></span>
@@ -270,7 +295,7 @@
                         </div>
                         <span class="text-[10px] font-mono font-semibold px-2.5 py-0.5 bg-slate-950 text-slate-500 rounded-full border border-white/[0.04] self-start sm:self-center">July 2025 – July 2026</span>
                     </div>
-                    
+
                     <ul class="mt-3.5 space-y-2.5 text-sm text-slate-400 font-sans">
                         <li class="flex items-start gap-2.5">
                             <span class="text-accentCyan font-mono text-xs mt-0.5">■</span>
@@ -293,11 +318,11 @@
             </div>
         </section>
 
-        <section class="bento-card p-6 sm:p-8 rounded-3xl space-y-6">
+        <section class="bento-card p-6 sm:p-8 rounded-3xl space-y-6 reveal">
             <h2 class="text-lg font-bold text-white flex items-center gap-2.5 font-sans tracking-tight">
                 <i class="fa-solid fa-graduation-cap text-accentCyan text-base"></i> Certifications & Validation Nodes
             </h2>
-            
+
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div class="p-4 bg-slate-950/40 border border-white/[0.02] rounded-2xl flex items-center gap-3.5 hover:border-white/[0.06] transition-colors">
                     <div class="w-9 h-9 rounded-xl bg-accentCyan/10 flex items-center justify-center text-accentCyan text-sm"><i class="fa-solid fa-shield-halved"></i></div>
@@ -323,7 +348,30 @@
             </div>
         </section>
 
+        <footer class="reveal pt-4 pb-2 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] font-mono text-slate-500">
+            <span>&copy; <span id="year"></span> M. Prithivraj. Built and deployed with intent.</span>
+            <a href="#top" class="hover:text-accentCyan transition-colors flex items-center gap-1.5">
+                <i class="fa-solid fa-arrow-up"></i> Back to top
+            </a>
+        </footer>
+
     </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Scroll-reveal for sections as they enter the viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 
 </body>
 </html>
