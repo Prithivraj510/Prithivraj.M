@@ -7,328 +7,394 @@
 <meta name="description" content="M. Prithivraj — DevOps Infrastructure Engineer specializing in AWS, Jenkins CI/CD pipelines, Docker/ECS containerization, and enterprise DNS management.">
 <meta property="og:title" content="M. Prithivraj | DevOps & Cloud Infrastructure Engineer">
 <meta property="og:description" content="Portfolio of M. Prithivraj — DevOps Engineer skilled in AWS, CI/CD, Docker, and cloud infrastructure.">
-<meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23F5F6F3'/%3E%3Ccircle cx='50' cy='50' r='14' fill='%231F7A5C'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23020408'/%3E%3Ccircle cx='50' cy='50' r='16' fill='%230ea5e9'/%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital@1&family=Inter:wght@300;400;500;600;700&family=Menlo&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 :root{
-  --paper:#F5F6F3;
-  --paper-raised:#FFFFFF;
-  --ink:#14171A;
-  --ink-soft:#565D63;
-  --ink-faint:#8A9096;
-  --line:#DEE0DB;
-  --line-strong:#C7CAC3;
-  --signal:#1F7A5C;
-  --signal-soft:#E6F0EA;
-  --signal-dim:#9AAFA5;
+  --bg:#020408;
+  --surface:#09090b;
+  --surface-elevated:#0c0c0e;
+  --primary:#0ea5e9;
+  --secondary:#3b82f6;
+  --indigo:#6366f1;
+  --emerald:#10b981;
+  --text-main:#ffffff;
+  --text-muted:#a1a1aa;
+  --text-dim:#71717a;
+  --border:rgba(255,255,255,0.1);
 }
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{
   margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:'IBM Plex Sans',sans-serif;
+  background:var(--bg);
+  color:var(--text-main);
+  font-family:'Inter',sans-serif;
   -webkit-font-smoothing:antialiased;
 }
-.mono{font-family:'IBM Plex Mono',monospace;}
-.wrap{max-width:840px;margin:0 auto;padding:0 24px;}
+.no-scrollbar::-webkit-scrollbar{display:none;}
+.no-scrollbar{-ms-overflow-style:none; scrollbar-width:none;}
+::selection{background:rgba(14,165,233,.3); color:#7dd3fc;}
+.font-serif-custom{font-family:'Newsreader',serif; font-style:italic;}
+.mono{font-family:'Menlo',monospace;}
 
-.grid-bg{
-  background-image:
-    linear-gradient(var(--line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size:36px 36px;
-  mask-image: radial-gradient(ellipse 100% 60% at 50% 0%, black 40%, transparent 100%);
+.bg-glow{
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:
+    radial-gradient(ellipse 60% 40% at 25% 10%, rgba(14,165,233,0.12), transparent 60%),
+    radial-gradient(ellipse 50% 35% at 85% 25%, rgba(99,102,241,0.10), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 50% 100%, rgba(16,185,129,0.06), transparent 60%);
+}
+.grid-overlay{
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background-image: linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 120px 100%;
+  mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
 }
 
-.eyebrow{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:11px;
-  letter-spacing:0.14em;
-  text-transform:uppercase;
-  color:var(--ink-faint);
-  display:flex;
-  align-items:center;
-  gap:8px;
+.shell{
+  position:relative; z-index:20;
+  max-width:1200px; margin:0 auto;
 }
-.eyebrow::before{
-  content:'';
-  width:6px;height:6px;
-  background:var(--signal);
-  display:inline-block;
-  border-radius:1px;
+@media(min-width:1024px){
+  .shell{
+    border:1px solid var(--border);
+    border-radius:2.5rem;
+    margin-top:24px; margin-bottom:24px;
+    background:rgba(9,9,11,0.5);
+    backdrop-filter:blur(20px);
+    box-shadow:0 20px 60px rgba(0,0,0,0.6);
+    overflow:hidden;
+  }
 }
 
-.hairline{border-top:1px solid var(--line);}
-
-.chip{
-  border:1px solid var(--line-strong);
-  color:var(--ink-soft);
-  font-family:'IBM Plex Mono',monospace;
-  font-size:12px;
-  padding:5px 12px;
-  border-radius:3px;
-  transition:border-color .2s ease, color .2s ease, background .2s ease;
-  display:inline-block;
+.nav-pill{
+  background:linear-gradient(to bottom right, rgba(255,255,255,0.08), rgba(255,255,255,0));
+  border:1px solid var(--border);
+  border-radius:9999px;
+  backdrop-filter:blur(12px);
 }
-.chip:hover{border-color:var(--signal); color:var(--signal); background:var(--signal-soft);}
+
+.badge-ai{
+  background:rgba(14,165,233,0.1);
+  border:1px solid rgba(14,165,233,0.2);
+  color:#7dd3fc;
+}
 
 .btn-primary{
-  background:var(--ink);
-  color:var(--paper);
-  font-family:'IBM Plex Mono',monospace;
-  font-size:12px;
-  letter-spacing:.04em;
-  text-transform:uppercase;
-  padding:11px 20px;
-  border-radius:3px;
-  transition:background .2s ease;
-  display:inline-flex; align-items:center; gap:8px;
+  position:relative;
+  background:linear-gradient(to bottom, #2563eb, #1d4ed8);
+  box-shadow:0 0 20px rgba(14,165,233,0.35);
+  border-radius:9999px;
+  padding:12px 26px;
+  font-weight:500;
+  font-size:14px;
+  overflow:hidden;
+  isolation:isolate;
 }
-.btn-primary:hover{background:var(--signal);}
+.btn-primary::before{
+  content:'';
+  position:absolute; inset:-2px; z-index:-1;
+  border-radius:9999px;
+  background:conic-gradient(from 0deg, #0ea5e9, #6366f1, #0ea5e9);
+  opacity:0;
+  transition:opacity .3s ease;
+  animation:spin 3s linear infinite;
+}
+.btn-primary:hover::before{opacity:1;}
+@keyframes spin{to{transform:rotate(360deg);}}
 
 .btn-ghost{
-  border:1px solid var(--line-strong);
-  color:var(--ink);
-  font-family:'IBM Plex Mono',monospace;
-  font-size:12px;
-  letter-spacing:.04em;
-  text-transform:uppercase;
-  padding:10px 20px;
-  border-radius:3px;
+  border:1px solid var(--border);
+  border-radius:9999px;
+  padding:11px 24px;
+  font-size:14px;
+  color:var(--text-muted);
   transition:border-color .2s ease, color .2s ease;
-  display:inline-flex; align-items:center; gap:8px;
 }
-.btn-ghost:hover{border-color:var(--signal); color:var(--signal);}
+.btn-ghost:hover{border-color:rgba(14,165,233,0.4); color:#fff;}
 
-.log-row{position:relative; padding-left:28px;}
-.log-row::before{
-  content:'';
-  position:absolute; left:5px; top:6px; bottom:-32px;
-  width:1px; background:var(--line);
-}
-.log-row:last-child::before{display:none;}
-.dot{
-  position:absolute; left:0; top:4px;
-  width:11px; height:11px; border-radius:50%;
-  border:2px solid var(--paper);
-  box-shadow:0 0 0 1px var(--line-strong);
-}
-.dot.live{background:var(--signal); box-shadow:0 0 0 1px var(--signal);}
-.dot.live::after{
-  content:'';
-  position:absolute; inset:-5px;
-  border-radius:50%;
-  border:1px solid var(--signal);
-  animation:ping 2.4s cubic-bezier(0,0,0.2,1) infinite;
-}
-.dot.archived{background:var(--line-strong);}
-@keyframes ping{
-  0%{transform:scale(0.7); opacity:.8;}
-  80%{transform:scale(1.8); opacity:0;}
-  100%{opacity:0;}
+.card-glass{
+  background:rgba(24,24,27,0.9);
+  border:1px solid var(--border);
+  box-shadow:0 8px 30px rgba(0,0,0,0.5);
+  border-radius:1rem;
 }
 
-.reveal{opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease;}
+.animate-float{animation:float-subtle 6s ease-in-out infinite;}
+@keyframes float-subtle{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+
+.animate-beam{
+  stroke-dasharray:40 400;
+  animation:dash-flow 6s linear infinite;
+}
+@keyframes dash-flow{to{stroke-dashoffset:-1000;}}
+
+.pulse-dot{
+  width:8px; height:8px; border-radius:50%;
+  background:var(--emerald);
+  box-shadow:0 0 0 0 rgba(16,185,129,0.6);
+  animation:pulse-ring 2s cubic-bezier(0.4,0,0.6,1) infinite;
+}
+@keyframes pulse-ring{
+  0%{box-shadow:0 0 0 0 rgba(16,185,129,0.5);}
+  70%{box-shadow:0 0 0 8px rgba(16,185,129,0);}
+  100%{box-shadow:0 0 0 0 rgba(16,185,129,0);}
+}
+
+.tool-tag{
+  background:var(--surface-elevated);
+  border:1px solid var(--border);
+  color:var(--text-muted);
+  transition:border-color .2s ease, color .2s ease;
+}
+.tool-tag:hover{border-color:rgba(14,165,233,0.4); color:#7dd3fc;}
+
+.reveal{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease;}
 .reveal.is-visible{opacity:1; transform:none;}
 
 @media (prefers-reduced-motion: reduce){
+  .animate-float, .animate-beam, .pulse-dot, .btn-primary::before{animation:none;}
   .reveal{opacity:1; transform:none; transition:none;}
-  .dot.live::after{animation:none; display:none;}
 }
 
-a:focus-visible, button:focus-visible{
-  outline:2px solid var(--signal);
-  outline-offset:2px;
-}
-
-::-webkit-scrollbar{width:8px;}
-::-webkit-scrollbar-track{background:var(--paper);}
-::-webkit-scrollbar-thumb{background:var(--line-strong); border-radius:8px;}
+a:focus-visible, button:focus-visible{outline:2px solid var(--primary); outline-offset:2px;}
 </style>
 </head>
-<body>
+<body class="no-scrollbar">
 
-<header class="grid-bg pt-16 pb-14" id="top">
-  <div class="wrap">
-    <div class="flex items-center justify-between mb-10">
-      <span class="mono text-[11px] tracking-[0.14em] uppercase" style="color:var(--ink-faint);">Portfolio / 2026</span>
-      <span class="eyebrow">System Operational</span>
+<div class="bg-glow"></div>
+<div class="grid-overlay"></div>
+
+<div class="shell">
+
+  <!-- NAV -->
+  <nav class="relative z-50 flex items-center justify-between px-6 sm:px-10 py-6">
+    <span class="mono text-xs tracking-widest uppercase text-zinc-400 flex items-center gap-2">
+      <i class="fa-solid fa-cube text-sky-400"></i> M. PRITHIVRAJ
+    </span>
+    <div class="hidden sm:flex nav-pill px-6 py-2.5 gap-6 text-sm text-zinc-300">
+      <a href="#stack" class="hover:text-white transition-colors">Stack</a>
+      <a href="#pipeline" class="hover:text-white transition-colors">Pipeline</a>
+      <a href="#log" class="hover:text-white transition-colors">Experience</a>
+      <a href="#credentials" class="hover:text-white transition-colors">Credentials</a>
     </div>
+    <a href="mailto:prithiv6380407352@gmail.com" class="btn-primary text-white">Get in touch</a>
+  </nav>
 
-    <h1 class="text-[40px] sm:text-[56px] font-semibold leading-[1.05] tracking-tight" style="color:var(--ink);">
-      M. Prithivraj
-    </h1>
-    <p class="mono text-sm sm:text-base mt-3" style="color:var(--signal);">
-      &gt; DevOps Infrastructure Engineer
-    </p>
-    <p class="mt-5 max-w-[520px] text-[15px] leading-relaxed" style="color:var(--ink-soft);">
-      I build and maintain the systems that keep applications running — CI/CD pipelines, container platforms, and cloud infrastructure that stay online while everyone else sleeps.
-    </p>
-
-    <div class="flex flex-wrap items-center gap-3 mt-8">
-      <a href="your-resume-url-here.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary">
-        <i class="fa-solid fa-file-arrow-down"></i> Resume
-      </a>
-      <a href="mailto:prithiv6380407352@gmail.com" class="btn-ghost">
-        <i class="fa-solid fa-envelope"></i> Email
-      </a>
-      <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-ghost">
-        <i class="fa-brands fa-github"></i> GitHub
-      </a>
-      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn-ghost">
-        <i class="fa-brands fa-linkedin"></i> LinkedIn
-      </a>
-    </div>
-
-    <div class="flex flex-wrap gap-x-6 gap-y-2 mt-6 mono text-[12px]" style="color:var(--ink-faint);">
-      <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot"></i> Mettur Dam, Tamil Nadu</span>
-      <span class="flex items-center gap-1.5"><i class="fa-solid fa-phone"></i> +91 6380407352</span>
-    </div>
-  </div>
-</header>
-
-<div class="wrap"><div class="hairline"></div></div>
-
-<section class="wrap py-8 reveal">
-  <div class="flex flex-wrap gap-x-10 gap-y-4">
-    <div>
-      <div class="text-2xl font-semibold mono" style="color:var(--ink);">1+</div>
-      <div class="mono text-[11px] uppercase tracking-wider" style="color:var(--ink-faint);">Years experience</div>
-    </div>
-    <div class="hidden sm:block w-px" style="background:var(--line);"></div>
-    <div>
-      <div class="text-2xl font-semibold mono" style="color:var(--signal);">10+</div>
-      <div class="mono text-[11px] uppercase tracking-wider" style="color:var(--ink-faint);">AWS deployments</div>
-    </div>
-    <div class="hidden sm:block w-px" style="background:var(--line);"></div>
-    <div>
-      <div class="text-2xl font-semibold mono" style="color:var(--ink);">99.9%</div>
-      <div class="mono text-[11px] uppercase tracking-wider" style="color:var(--ink-faint);">SLA availability</div>
-    </div>
-  </div>
-</section>
-
-<div class="wrap"><div class="hairline"></div></div>
-
-<section class="wrap py-12 reveal">
-  <div class="eyebrow mb-5">Profile</div>
-  <p class="text-[16px] leading-[1.75] max-w-[620px]" style="color:var(--ink);">
-    Proactive and results-driven Junior DevOps Engineer with hands-on experience architecting automated CI/CD pipelines, containerizing microservices, and managing core cloud infrastructure. Proven capability in optimizing application lifecycles using <strong>Jenkins</strong>, while deploying scalable container workflows across <strong>Amazon ECS/ECR</strong>. Distinct proficiency in managing enterprise DNS configurations and high-availability AWS nodes.
-  </p>
-</section>
-
-<div class="wrap"><div class="hairline"></div></div>
-
-<section class="wrap py-12 reveal">
-  <div class="eyebrow mb-6">Stack</div>
-
-  <div class="space-y-7">
-    <div>
-      <div class="mono text-[12px] font-medium mb-2.5" style="color:var(--ink-soft);">Cloud — AWS Core</div>
-      <div class="flex flex-wrap gap-2">
-        <span class="chip">EC2</span><span class="chip">S3</span><span class="chip">CloudFront</span>
-        <span class="chip">Lambda</span><span class="chip">Route 53</span><span class="chip">IAM</span>
-        <span class="chip">CloudWatch</span>
-      </div>
-    </div>
-    <div>
-      <div class="mono text-[12px] font-medium mb-2.5" style="color:var(--ink-soft);">CI/CD Pipelines</div>
-      <div class="flex flex-wrap gap-2">
-        <span class="chip">Jenkins</span><span class="chip">Bitbucket</span><span class="chip">Git Hooks</span>
-      </div>
-    </div>
-    <div>
-      <div class="mono text-[12px] font-medium mb-2.5" style="color:var(--ink-soft);">Containerization</div>
-      <div class="flex flex-wrap gap-2">
-        <span class="chip">Docker</span><span class="chip">Amazon ECS</span><span class="chip">ECR</span>
-      </div>
-    </div>
-    <div>
-      <div class="mono text-[12px] font-medium mb-2.5" style="color:var(--ink-soft);">DNS & Edge</div>
-      <div class="flex flex-wrap gap-2">
-        <span class="chip">Cloudflare</span><span class="chip">Route 53</span><span class="chip">GoDaddy</span>
-        <span class="chip">Spaceship</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="wrap"><div class="hairline"></div></div>
-
-<section class="wrap py-12 reveal">
-  <div class="eyebrow mb-8">Log — Operational History</div>
-
-  <div class="space-y-8">
-    <div class="log-row">
-      <span class="dot live"></span>
-      <div class="flex flex-wrap items-baseline justify-between gap-2">
-        <h3 class="text-[17px] font-semibold" style="color:var(--ink);">DevOps Infrastructure Engineer</h3>
-        <span class="mono text-[11px] uppercase" style="color:var(--signal);">Active — Present</span>
-      </div>
-      <p class="mono text-[12px] mt-0.5" style="color:var(--ink-faint);">Biovus Blockchain Technologies Pvt Ltd · Salem</p>
-      <p class="text-[14px] leading-relaxed mt-2.5" style="color:var(--ink-soft);">
-        Architecting secure cryptographic platform pipelines and scaling internal node availability matrices.
+  <!-- HERO -->
+  <header class="relative px-6 sm:px-10 pt-10 pb-24 grid lg:grid-cols-2 gap-12 items-center">
+    <div class="relative z-30">
+      <span class="badge-ai inline-flex items-center gap-2 px-3 py-1 rounded-full mono text-[11px] uppercase tracking-wider">
+        <span class="pulse-dot"></span> Systems Operational
+      </span>
+      <h1 class="mt-6 text-5xl sm:text-6xl leading-[0.98] font-semibold tracking-tight">
+        Infrastructure that<br>
+        <span class="font-serif-custom font-normal bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent">just keeps running</span>
+      </h1>
+      <p class="mt-6 text-zinc-400 text-base leading-relaxed max-w-md">
+        DevOps Infrastructure Engineer building automated CI/CD pipelines, containerized deployments, and resilient cloud infrastructure on AWS.
       </p>
-    </div>
-
-    <div class="log-row">
-      <span class="dot archived"></span>
-      <div class="flex flex-wrap items-baseline justify-between gap-2">
-        <h3 class="text-[17px] font-semibold" style="color:var(--ink);">Junior DevOps Engineer</h3>
-        <span class="mono text-[11px] uppercase" style="color:var(--ink-faint);">Jul 2025 – Jul 2026</span>
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        <a href="your-resume-url-here.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary text-white">
+          <i class="fa-solid fa-file-arrow-down mr-1"></i> View Resume
+        </a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-ghost">
+          <i class="fa-brands fa-github mr-1"></i> GitHub
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn-ghost">
+          <i class="fa-brands fa-linkedin mr-1"></i> LinkedIn
+        </a>
       </div>
-      <p class="mono text-[12px] mt-0.5" style="color:var(--ink-faint);">Infrastructure Engineering & Automations</p>
-      <ul class="mt-2.5 space-y-2 text-[14px] leading-relaxed" style="color:var(--ink-soft);">
-        <li class="flex gap-2.5"><span class="mono" style="color:var(--signal);">→</span><span>Managed deployment workflows via Jenkins pipelines integrated with Bitbucket hooks.</span></li>
-        <li class="flex gap-2.5"><span class="mono" style="color:var(--signal);">→</span><span>Packaged application dependencies into Docker images served over Amazon ECS via automated ECR pulls.</span></li>
-        <li class="flex gap-2.5"><span class="mono" style="color:var(--signal);">→</span><span>Managed EC2 instances, S3 static hosting, and CloudFront caching for sub-second delivery.</span></li>
-        <li class="flex gap-2.5"><span class="mono" style="color:var(--signal);">→</span><span>Handled DNS routing across Route 53, Cloudflare, and registrar domains.</span></li>
-      </ul>
+      <div class="mt-8 flex flex-wrap gap-x-6 gap-y-2 mono text-[12px] text-zinc-500">
+        <span><i class="fa-solid fa-location-dot mr-1.5"></i>Mettur Dam, Tamil Nadu</span>
+        <span><i class="fa-solid fa-phone mr-1.5"></i>+91 6380407352</span>
+      </div>
     </div>
+
+    <!-- PIPELINE VISUALIZATION -->
+    <div class="relative h-[360px] hidden lg:block" id="pipeline">
+      <svg viewBox="0 0 500 360" class="w-full h-full">
+        <path d="M 20 180 C 150 60, 200 300, 480 180" fill="none" stroke="#1e293b" stroke-width="20" stroke-linecap="round"/>
+        <path id="pathMain" d="M 20 180 C 150 60, 200 300, 480 180" fill="none" stroke="url(#beamGrad)" stroke-width="3" class="animate-beam"/>
+        <defs>
+          <linearGradient id="beamGrad" x1="0" x2="1">
+            <stop offset="0%" stop-color="#0ea5e9"/>
+            <stop offset="100%" stop-color="#6366f1"/>
+          </linearGradient>
+        </defs>
+        <circle r="5" fill="#7dd3fc">
+          <animateMotion dur="4s" repeatCount="indefinite">
+            <mpath href="#pathMain"/>
+          </animateMotion>
+        </circle>
+      </svg>
+
+      <div class="absolute top-4 left-0 card-glass px-4 py-3 animate-float" style="animation-delay:0ms;">
+        <div class="mono text-[10px] text-sky-400 mb-1">01 — BUILD</div>
+        <div class="text-sm text-white">Jenkins CI Trigger</div>
+      </div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 card-glass px-4 py-3 animate-float" style="animation-delay:800ms;">
+        <div class="mono text-[10px] text-indigo-400 mb-1">02 — PACKAGE</div>
+        <div class="text-sm text-white">Docker → ECR</div>
+      </div>
+      <div class="absolute bottom-6 right-0 card-glass px-4 py-3 animate-float" style="animation-delay:1500ms;">
+        <div class="mono text-[10px] text-emerald-400 mb-1">03 — DEPLOY</div>
+        <div class="text-sm text-white">Amazon ECS · Live</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- STATS STRIP -->
+  <div class="reveal border-t border-white/10 px-6 sm:px-10 py-8 grid grid-cols-3 gap-6">
+    <div><div class="text-3xl font-semibold">1+</div><div class="mono text-[11px] uppercase tracking-wider text-zinc-500 mt-1">Years Experience</div></div>
+    <div><div class="text-3xl font-semibold text-sky-400">10+</div><div class="mono text-[11px] uppercase tracking-wider text-zinc-500 mt-1">AWS Deployments</div></div>
+    <div><div class="text-3xl font-semibold text-emerald-400">99.9%</div><div class="mono text-[11px] uppercase tracking-wider text-zinc-500 mt-1">SLA Availability</div></div>
   </div>
-</section>
 
-<div class="wrap"><div class="hairline"></div></div>
+  <!-- PROFILE -->
+  <section class="reveal border-t border-white/10 px-6 sm:px-10 py-16">
+    <span class="mono text-[11px] uppercase tracking-widest text-sky-400">Profile</span>
+    <p class="mt-4 text-lg text-zinc-300 leading-relaxed max-w-2xl">
+      Proactive and results-driven <span class="font-serif-custom text-white">Junior DevOps Engineer</span> with hands-on experience architecting automated CI/CD pipelines, containerizing microservices, and managing core cloud infrastructure — using Jenkins for pipeline orchestration and Amazon ECS/ECR for scalable container workflows. Distinct proficiency in enterprise DNS configuration and high-availability AWS nodes.
+    </p>
+  </section>
 
-<section class="wrap py-12 reveal">
-  <div class="eyebrow mb-6">Credentials</div>
-  <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
-    <div>
-      <div class="mono text-[11px] uppercase tracking-wider mb-1" style="color:var(--signal);">Certification</div>
-      <div class="font-medium text-[15px]" style="color:var(--ink);">IBM AWS Cloud</div>
-      <div class="text-[13px] mt-0.5" style="color:var(--ink-faint);">SLA Academy, Chennai</div>
+  <!-- STACK -->
+  <section id="stack" class="reveal border-t border-white/10 px-6 sm:px-10 py-16">
+    <span class="mono text-[11px] uppercase tracking-widest text-sky-400">Connect all your tools</span>
+    <h2 class="mt-3 text-3xl sm:text-4xl font-semibold">
+      The <span class="font-serif-custom bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent">ecosystem</span> I operate in
+    </h2>
+
+    <div class="mt-10 grid sm:grid-cols-2 gap-4">
+      <div class="card-glass p-5">
+        <div class="flex items-center gap-2 mb-3"><i class="devicon-amazonwebservices-plain colored text-lg"></i><span class="mono text-[11px] uppercase text-zinc-400">AWS Core</span></div>
+        <div class="flex flex-wrap gap-2">
+          <span class="tool-tag mono text-[11px] px-2.5 py-1 rounded">EC2</span>
+          <span class="tool-tag mono text-[11px] px-2.5 py-1 rounded">S3</span>
+          <span class="tool-tag mono text-[11px] px-2.5 py-1 rounded">CloudFront</span>
+          <span class="tool-tag mono text-[11px] px-2.5 py-1 rounded">Lambda</span>
+          <span class="tool-tag mono text-[11px] px-2.5 py-1 rounded">Route 53</span>
+          <span class="tool-tag mono text-[11px] px-2.5 py-1 rounded">IAM</span>
+          <span class="tool-tag mono text-[11px] px-2.5 py-1 rounded">CloudWatch</span>
+        </div>
+      </div>
+      <div class="card-glass p-5">
+        <div class="flex items-center gap-2 mb-3"><i class="devicon-jenkins-line colored text-lg"></i><span class="mono text-[11px] uppercase text-zinc-400">CI/CD</span></div>
+        <div class="flex flex-wrap gap-2">
+          <span class="tool-tag mono text-[11px] px-2.5 py-1 rounded">Jenkins</span>
+          <span class="tool-tag mono text-[11px] px-2.5 py-1 rounded">Bitbucket</span>
+          <span class="tool-tag mono text-[11px] px-2.5 py-1 rounded">Git Hooks</span>
+        </div>
+      </div>
+      <div class="card-glass p-5">
+        <div class="flex items-center gap-2 mb-3"><i class="devicon-docker-plain colored text-lg"></i><span class="mono text-[11px] uppercase text-zinc-400">Containers</span></div>
+        <div class="flex flex-wrap gap-2">
+          <span class="tool-tag mono text-[11px] px-2.5 py-1 rounded">Docker</span>
+          <span class="tool-tag mono text-[11px] px-2.5 py-1 rounded">Amazon ECS</span>
+          <span class="tool-tag mono text-[11px] px-2.5 py-1 rounded">ECR</span>
+        </div>
+      </div>
+      <div class="card-glass p-5">
+        <div class="flex items-center gap-2 mb-3"><i class="devicon-cloudflare-plain colored text-lg"></i><span class="mono text-[11px] uppercase text-zinc-400">DNS & Edge</span></div>
+        <div class="flex flex-wrap gap-2">
+          <span class="tool-tag mono text-[11px] px-2.5 py-1 rounded">Cloudflare</span>
+          <span class="tool-tag mono text-[11px] px-2.5 py-1 rounded">Route 53</span>
+          <span class="tool-tag mono text-[11px] px-2.5 py-1 rounded">GoDaddy</span>
+          <span class="tool-tag mono text-[11px] px-2.5 py-1 rounded">Spaceship</span>
+        </div>
+      </div>
     </div>
-    <div>
-      <div class="mono text-[11px] uppercase tracking-wider mb-1" style="color:var(--signal);">Degree</div>
-      <div class="font-medium text-[15px]" style="color:var(--ink);">B.E. (EEE)</div>
-      <div class="text-[13px] mt-0.5" style="color:var(--ink-faint);">Engineering Graduate</div>
+  </section>
+
+  <!-- EXPERIENCE / LOG -->
+  <section id="log" class="reveal border-t border-white/10 px-6 sm:px-10 py-16">
+    <span class="mono text-[11px] uppercase tracking-widest text-sky-400">Operational History</span>
+    <h2 class="mt-3 text-3xl sm:text-4xl font-semibold mb-10">Where I've <span class="font-serif-custom">shipped</span></h2>
+
+    <div class="space-y-5">
+      <div class="card-glass p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="pulse-dot"></span>
+            <h3 class="text-lg font-semibold text-white">DevOps Infrastructure Engineer</h3>
+          </div>
+          <p class="mono text-[12px] text-zinc-500 mt-1 ml-4">Biovus Blockchain Technologies Pvt Ltd · Salem</p>
+          <p class="text-sm text-zinc-400 mt-3 ml-4 max-w-lg">Architecting secure cryptographic platform pipelines and scaling internal node availability matrices.</p>
+        </div>
+        <span class="badge-ai mono text-[11px] px-3 py-1 rounded-full self-start sm:self-center">Present</span>
+      </div>
+
+      <div class="card-glass p-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+          <h3 class="text-lg font-semibold text-white">Junior DevOps Engineer</h3>
+          <span class="mono text-[11px] text-zinc-500">Jul 2025 – Jul 2026</span>
+        </div>
+        <ul class="space-y-2.5 text-sm text-zinc-400">
+          <li class="flex gap-2.5"><i class="fa-solid fa-caret-right text-sky-400 mt-1"></i><span>Managed deployment workflows via Jenkins pipelines integrated with Bitbucket hooks.</span></li>
+          <li class="flex gap-2.5"><i class="fa-solid fa-caret-right text-sky-400 mt-1"></i><span>Packaged application dependencies into Docker images served over Amazon ECS via automated ECR pulls.</span></li>
+          <li class="flex gap-2.5"><i class="fa-solid fa-caret-right text-sky-400 mt-1"></i><span>Managed EC2 instances, S3 static hosting, and CloudFront caching for sub-second delivery.</span></li>
+          <li class="flex gap-2.5"><i class="fa-solid fa-caret-right text-sky-400 mt-1"></i><span>Handled DNS routing across Route 53, Cloudflare, and registrar domains.</span></li>
+        </ul>
+      </div>
     </div>
-    <div>
-      <div class="mono text-[11px] uppercase tracking-wider mb-1" style="color:var(--signal);">Diploma</div>
-      <div class="font-medium text-[15px]" style="color:var(--ink);">Diploma (EEE)</div>
-      <div class="text-[13px] mt-0.5" style="color:var(--ink-faint);">Technical Education</div>
+  </section>
+
+  <!-- CREDENTIALS -->
+  <section id="credentials" class="reveal border-t border-white/10 px-6 sm:px-10 py-16">
+    <span class="mono text-[11px] uppercase tracking-widest text-sky-400">Credentials</span>
+    <div class="mt-8 grid sm:grid-cols-3 gap-4">
+      <div class="card-glass p-5">
+        <i class="fa-solid fa-shield-halved text-sky-400 mb-3"></i>
+        <div class="font-medium text-white text-sm">IBM AWS Cloud</div>
+        <div class="text-zinc-500 text-xs mt-1">SLA Academy, Chennai</div>
+      </div>
+      <div class="card-glass p-5">
+        <i class="fa-solid fa-graduation-cap text-indigo-400 mb-3"></i>
+        <div class="font-medium text-white text-sm">B.E. (EEE)</div>
+        <div class="text-zinc-500 text-xs mt-1">Engineering Graduate</div>
+      </div>
+      <div class="card-glass p-5">
+        <i class="fa-solid fa-network-wired text-emerald-400 mb-3"></i>
+        <div class="font-medium text-white text-sm">Diploma (EEE)</div>
+        <div class="text-zinc-500 text-xs mt-1">Technical Education</div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="wrap"><div class="hairline"></div></div>
+  <!-- CTA -->
+  <section class="reveal border-t border-white/10 px-6 sm:px-10 py-24 text-center">
+    <h2 class="text-4xl sm:text-6xl font-semibold leading-tight">
+      Let's build something<br><span class="font-serif-custom bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-500 bg-clip-text text-transparent">reliable</span>
+    </h2>
+    <a href="mailto:prithiv6380407352@gmail.com" class="btn-primary text-white inline-block mt-8">
+      <i class="fa-solid fa-envelope mr-1"></i> Start a conversation
+    </a>
+  </section>
 
-<footer class="wrap py-8 flex flex-col sm:flex-row items-center justify-between gap-3 mono text-[11px]" style="color:var(--ink-faint);">
-  <span>&copy; <span id="year"></span> M. Prithivraj</span>
-  <a href="mailto:prithiv6380407352@gmail.com" class="hover:underline" style="color:var(--ink-faint);">prithiv6380407352@gmail.com</a>
-  <a href="#top" style="color:var(--ink-faint);" class="flex items-center gap-1.5">
-    <i class="fa-solid fa-arrow-up"></i> Top
-  </a>
-</footer>
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 px-6 sm:px-10 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <span class="mono text-[11px] text-zinc-500">&copy; <span id="year"></span> M. Prithivraj</span>
+    <div class="flex items-center gap-2 mono text-[11px] text-zinc-500">
+      <span class="pulse-dot"></span> All systems operational
+    </div>
+    <div class="flex items-center gap-4 text-zinc-500">
+      <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors"><i class="fa-brands fa-github"></i></a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="mailto:prithiv6380407352@gmail.com" class="hover:text-white transition-colors"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </footer>
 
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 const io = new IntersectionObserver((entries)=>{
