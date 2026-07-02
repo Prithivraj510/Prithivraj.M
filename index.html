@@ -1,377 +1,341 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M. Prithivraj | DevOps & Cloud Infrastructure Engineer</title>
-    <meta name="description" content="M. Prithivraj — DevOps Infrastructure Engineer specializing in AWS, Jenkins CI/CD pipelines, Docker/ECS containerization, and enterprise DNS management.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M. Prithivraj | DevOps & Cloud Infrastructure Engineer</title>
+<meta name="description" content="M. Prithivraj — DevOps Infrastructure Engineer specializing in AWS, Jenkins CI/CD pipelines, Docker/ECS containerization, and enterprise DNS management.">
+<meta property="og:title" content="M. Prithivraj | DevOps & Cloud Infrastructure Engineer">
+<meta property="og:description" content="Portfolio of M. Prithivraj — DevOps Engineer skilled in AWS, CI/CD, Docker, and cloud infrastructure.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23F5F6F3'/%3E%3Ccircle cx='50' cy='50' r='14' fill='%231F7A5C'/%3E%3C/svg%3E">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="M. Prithivraj | DevOps & Cloud Infrastructure Engineer">
-    <meta property="og:description" content="Portfolio of M. Prithivraj — DevOps Engineer skilled in AWS, CI/CD, Docker, and cloud infrastructure.">
-    <meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23030712'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='%2306b6d4' font-family='monospace'%3E%3E_%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --paper:#F5F6F3;
+  --paper-raised:#FFFFFF;
+  --ink:#14171A;
+  --ink-soft:#565D63;
+  --ink-faint:#8A9096;
+  --line:#DEE0DB;
+  --line-strong:#C7CAC3;
+  --signal:#1F7A5C;
+  --signal-soft:#E6F0EA;
+  --signal-dim:#9AAFA5;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'IBM Plex Sans',sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.wrap{max-width:840px;margin:0 auto;padding:0 24px;}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+.grid-bg{
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size:36px 36px;
+  mask-image: radial-gradient(ellipse 100% 60% at 50% 0%, black 40%, transparent 100%);
+}
 
-    <script src="https://cdn.tailwindcss.com"></script>
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.eyebrow::before{
+  content:'';
+  width:6px;height:6px;
+  background:var(--signal);
+  display:inline-block;
+  border-radius:1px;
+}
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+.hairline{border-top:1px solid var(--line);}
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        darkbg: '#030712',
-                        surface: '#090d16',
-                        accentCyan: '#06b6d4',
-                        accentEmerald: '#10b981',
-                        accentPurple: '#6366f1',
-                        cardBorder: 'rgba(255, 255, 255, 0.04)'
-                    },
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace']
-                    }
-                }
-            }
-        }
-    </script>
+.chip{
+  border:1px solid var(--line-strong);
+  color:var(--ink-soft);
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12px;
+  padding:5px 12px;
+  border-radius:3px;
+  transition:border-color .2s ease, color .2s ease, background .2s ease;
+  display:inline-block;
+}
+.chip:hover{border-color:var(--signal); color:var(--signal); background:var(--signal-soft);}
 
-    <style>
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #030712; }
-        ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
+.btn-primary{
+  background:var(--ink);
+  color:var(--paper);
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12px;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  padding:11px 20px;
+  border-radius:3px;
+  transition:background .2s ease;
+  display:inline-flex; align-items:center; gap:8px;
+}
+.btn-primary:hover{background:var(--signal);}
 
-        .bento-card {
-            background: linear-gradient(145deg, rgba(9, 13, 22, 0.6) 0%, rgba(17, 24, 39, 0.4) 100%);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .bento-card:hover {
-            border-color: rgba(6, 182, 212, 0.3);
-            box-shadow: 0 20px 40px -15px rgba(6, 182, 212, 0.07);
-            transform: translateY(-2px);
-        }
-        .tech-tag {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-        }
+.btn-ghost{
+  border:1px solid var(--line-strong);
+  color:var(--ink);
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12px;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  padding:10px 20px;
+  border-radius:3px;
+  transition:border-color .2s ease, color .2s ease;
+  display:inline-flex; align-items:center; gap:8px;
+}
+.btn-ghost:hover{border-color:var(--signal); color:var(--signal);}
 
-        /* Scroll-reveal: sections fade/rise in as they enter view */
-        .reveal {
-            opacity: 0;
-            transform: translateY(16px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        .reveal.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+.log-row{position:relative; padding-left:28px;}
+.log-row::before{
+  content:'';
+  position:absolute; left:5px; top:6px; bottom:-32px;
+  width:1px; background:var(--line);
+}
+.log-row:last-child::before{display:none;}
+.dot{
+  position:absolute; left:0; top:4px;
+  width:11px; height:11px; border-radius:50%;
+  border:2px solid var(--paper);
+  box-shadow:0 0 0 1px var(--line-strong);
+}
+.dot.live{background:var(--signal); box-shadow:0 0 0 1px var(--signal);}
+.dot.live::after{
+  content:'';
+  position:absolute; inset:-5px;
+  border-radius:50%;
+  border:1px solid var(--signal);
+  animation:ping 2.4s cubic-bezier(0,0,0.2,1) infinite;
+}
+.dot.archived{background:var(--line-strong);}
+@keyframes ping{
+  0%{transform:scale(0.7); opacity:.8;}
+  80%{transform:scale(1.8); opacity:0;}
+  100%{opacity:0;}
+}
 
-        /* Respect users who prefer reduced motion */
-        @media (prefers-reduced-motion: reduce) {
-            .reveal { opacity: 1; transform: none; transition: none; }
-            .bento-card { transition: none; }
-        }
+.reveal{opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease;}
+.reveal.is-visible{opacity:1; transform:none;}
 
-        a:focus-visible, button:focus-visible {
-            outline: 2px solid #06b6d4;
-            outline-offset: 2px;
-        }
-    </style>
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1; transform:none; transition:none;}
+  .dot.live::after{animation:none; display:none;}
+}
+
+a:focus-visible, button:focus-visible{
+  outline:2px solid var(--signal);
+  outline-offset:2px;
+}
+
+::-webkit-scrollbar{width:8px;}
+::-webkit-scrollbar-track{background:var(--paper);}
+::-webkit-scrollbar-thumb{background:var(--line-strong); border-radius:8px;}
+</style>
 </head>
-<body class="bg-darkbg text-slate-300 antialiased font-sans min-h-screen py-12 px-4 relative overflow-x-hidden">
+<body>
 
-    <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
-        <div class="absolute top-[-10%] left-[20%] w-[600px] h-[600px] rounded-full bg-accentCyan/5 blur-[140px]"></div>
-        <div class="absolute bottom-[10%] right-[10%] w-[500px] h-[500px] rounded-full bg-accentPurple/5 blur-[160px]"></div>
+<header class="grid-bg pt-16 pb-14" id="top">
+  <div class="wrap">
+    <div class="flex items-center justify-between mb-10">
+      <span class="mono text-[11px] tracking-[0.14em] uppercase" style="color:var(--ink-faint);">Portfolio / 2026</span>
+      <span class="eyebrow">System Operational</span>
     </div>
 
-    <div class="max-w-5xl mx-auto space-y-6 relative z-10">
+    <h1 class="text-[40px] sm:text-[56px] font-semibold leading-[1.05] tracking-tight" style="color:var(--ink);">
+      M. Prithivraj
+    </h1>
+    <p class="mono text-sm sm:text-base mt-3" style="color:var(--signal);">
+      &gt; DevOps Infrastructure Engineer
+    </p>
+    <p class="mt-5 max-w-[520px] text-[15px] leading-relaxed" style="color:var(--ink-soft);">
+      I build and maintain the systems that keep applications running — CI/CD pipelines, container platforms, and cloud infrastructure that stay online while everyone else sleeps.
+    </p>
 
-        <header id="top" class="bento-card p-6 sm:p-8 rounded-3xl relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-accentCyan/10 to-transparent rounded-bl-full pointer-events-none"></div>
-
-            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
-                <div class="space-y-3 w-full lg:w-auto">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 text-[11px] font-mono uppercase tracking-wider text-accentEmerald bg-accentEmerald/10 rounded-full border border-accentEmerald/20">
-                        <span class="w-1.5 h-1.5 rounded-full bg-accentEmerald animate-pulse"></span> SYSTEM_PIPELINE_STABLE
-                    </div>
-                    <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white font-sans">
-                        M. PRITHIVRAJ
-                    </h1>
-                    <div class="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-xs sm:text-sm tracking-wide">
-                        <span class="text-accentCyan font-bold">&gt;_ DEVOPS INFRASTRUCTURE ENGINEER</span>
-                        <span class="text-slate-600 hidden sm:inline">|</span>
-                        <span class="text-slate-400 flex items-center gap-1.5">
-                            <i class="fa-solid fa-location-dot text-slate-500"></i> Mettur Dam, Tamilnadu
-                        </span>
-                    </div>
-
-                    <div class="flex flex-wrap gap-x-4 gap-y-1.5 pt-1 font-mono text-[11px] text-slate-400">
-                        <a href="mailto:prithiv6380407352@gmail.com" class="hover:text-accentCyan transition-colors flex items-center gap-1.5">
-                            <i class="fa-solid fa-envelope text-slate-500"></i> prithiv6380407352@gmail.com
-                        </a>
-                        <span class="text-slate-700 hidden sm:inline">•</span>
-                        <a href="tel:+916380407352" class="hover:text-accentCyan transition-colors flex items-center gap-1.5">
-                            <i class="fa-solid fa-phone text-slate-500"></i> +91 6380407352
-                        </a>
-                    </div>
-                </div>
-
-                <div class="flex flex-col w-full lg:w-auto gap-2.5 min-w-[280px]">
-                    <button onclick="navigator.clipboard.writeText('prithiv6380407352@gmail.com'); this.querySelector('span').textContent='Copied!'; setTimeout(()=>{this.querySelector('span').textContent='Copy Email ID'},1500);" aria-label="Copy email address to clipboard" class="w-full justify-center flex items-center gap-2 px-4 py-2.5 bg-white hover:bg-accentCyan text-darkbg font-mono font-bold text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer shadow-lg shadow-white/5 group">
-                        <i class="fa-solid fa-copy group-hover:scale-110 transition-transform"></i> <span>Copy Email ID</span>
-                    </button>
-
-                    <a href="tel:+916380407352" class="w-full justify-center flex items-center gap-2 px-4 py-2.5 bg-slate-900/80 hover:bg-slate-800 border border-white/[0.04] text-slate-200 font-mono text-xs uppercase tracking-wider rounded-xl transition-all">
-                        <i class="fa-solid fa-phone text-accentEmerald"></i> Call Operator Node
-                    </a>
-
-                    <div class="h-[1px] bg-white/[0.06] my-0.5"></div>
-
-                    <div class="grid grid-cols-2 gap-2 text-xs font-mono">
-                        <!-- TODO: replace with your real LinkedIn URL -->
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-center flex items-center justify-center gap-1.5 px-3 py-2 bg-slate-900/40 border border-white/[0.04] rounded-xl hover:border-accentCyan/30 hover:bg-slate-800/40 transition-colors">
-                            <i class="fa-brands fa-linkedin text-accentCyan"></i> LinkedIn
-                        </a>
-                        <!-- TODO: replace with your real GitHub URL -->
-                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-center flex items-center justify-center gap-1.5 px-3 py-2 bg-slate-900/40 border border-white/[0.04] rounded-xl hover:border-white/20 hover:bg-slate-800/40 transition-colors">
-                            <i class="fa-brands fa-github text-slate-400"></i> GitHub
-                        </a>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-2 text-xs font-mono">
-                        <!-- TODO: replace with your real resume PDF link -->
-                        <a href="your-resume-url-here.pdf" target="_blank" rel="noopener noreferrer" class="text-center flex items-center justify-center gap-1.5 px-3 py-2 bg-accentPurple/10 border border-accentPurple/20 rounded-xl hover:bg-accentPurple/20 transition-all text-purple-200 font-medium">
-                            <i class="fa-solid fa-eye text-accentPurple"></i> View CV
-                        </a>
-                        <a href="your-resume-url-here.pdf" download="M_Prithivraj_Resume.pdf" class="text-center flex items-center justify-center gap-1.5 px-3 py-2 bg-accentEmerald/10 border border-accentEmerald/20 rounded-xl hover:bg-accentEmerald/20 transition-all text-emerald-200 font-medium">
-                            <i class="fa-solid fa-download text-accentEmerald"></i> Download
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch reveal">
-
-            <div class="md:col-span-4 flex flex-col justify-between gap-4">
-                <div class="bento-card p-5 rounded-2xl flex flex-col justify-center flex-1 relative overflow-hidden group">
-                    <span class="text-3xl font-bold text-white font-mono tracking-tight group-hover:text-accentCyan transition-colors">1+</span>
-                    <span class="text-[10px] text-slate-500 uppercase tracking-widest font-mono mt-1">Years Experience</span>
-                </div>
-                <div class="bento-card p-5 rounded-2xl flex flex-col justify-center flex-1 relative overflow-hidden group">
-                    <span class="text-3xl font-bold text-accentCyan font-mono tracking-tight">10+</span>
-                    <span class="text-[10px] text-slate-500 uppercase tracking-widest font-mono mt-1">AWS Deployments</span>
-                </div>
-                <div class="bento-card p-5 rounded-2xl flex flex-col justify-center flex-1 relative overflow-hidden group">
-                    <span class="text-3xl font-bold text-accentEmerald font-mono tracking-tight">99.9%</span>
-                    <span class="text-[10px] text-slate-500 uppercase tracking-widest font-mono mt-1">SLA Availability</span>
-                </div>
-            </div>
-
-            <div class="md:col-span-8 bento-card rounded-2xl overflow-hidden flex flex-col h-full">
-                <div class="bg-slate-950/80 px-4 py-2.5 border-b border-white/[0.03] flex items-center justify-between">
-                    <div class="flex items-center gap-2">
-                        <span class="w-2.5 h-2.5 rounded-full bg-red-500/70"></span>
-                        <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/70"></span>
-                        <span class="w-2.5 h-2.5 rounded-full bg-green-500/70"></span>
-                    </div>
-                    <span class="font-mono text-[10px] text-slate-500 tracking-wider">profile_summary</span>
-                    <div class="w-10"></div>
-                </div>
-                <div class="p-6 font-mono text-xs sm:text-sm space-y-4 flex-1 bg-surface/30 flex flex-col justify-center">
-                    <div>
-                        <p class="text-slate-500">&gt; profile_summary</p>
-                        <p class="text-slate-300 leading-relaxed font-sans text-sm mt-2">
-                            Proactive and results-driven <span class="text-white font-medium border-b border-accentCyan/30">Junior DevOps Engineer</span> with hands-on experience architecting automated CI/CD pipelines, containerizing microservices, and managing core cloud infrastructure. Proven capability in optimizing application lifecycles using <span class="text-accentCyan font-semibold">Jenkins</span>, while deploying highly scalable container workflows across <span class="text-accentCyan font-semibold">Amazon ECS/ECR</span>. Recognized for a strong systems-engineering mindset, with distinct proficiency in managing enterprise DNS configurations and high-availability AWS nodes.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <section class="bento-card p-6 sm:p-8 rounded-3xl space-y-6 reveal">
-            <h2 class="text-lg font-bold text-white flex items-center gap-2.5 font-sans tracking-tight">
-                <i class="fa-solid fa-layer-group text-accentCyan text-base"></i> Tooling & Cloud Ecosystem
-            </h2>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div class="p-4 bg-slate-950/40 border border-white/[0.02] rounded-2xl space-y-3 hover:border-white/[0.06] transition-colors">
-                    <div class="flex items-center gap-2">
-                        <i class="devicon-amazonwebservices-wordmark colored text-xl"></i>
-                        <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 font-bold">AWS Core Cloud Engine</span>
-                    </div>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">EC2</span>
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">S3</span>
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">CloudFront</span>
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">Lambda</span>
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">Route 53</span>
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">IAM</span>
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">CloudWatch</span>
-                    </div>
-                </div>
-
-                <div class="p-4 bg-slate-950/40 border border-white/[0.02] rounded-2xl space-y-3 hover:border-white/[0.06] transition-colors">
-                    <div class="flex items-center gap-2">
-                        <i class="devicon-jenkins-line colored text-xl"></i>
-                        <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 font-bold">CI/CD Pipeline Frameworks</span>
-                    </div>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-white">Jenkins Engine</span>
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">Bitbucket Versioning</span>
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">Git Hooks</span>
-                    </div>
-                </div>
-
-                <div class="p-4 bg-slate-950/40 border border-white/[0.02] rounded-2xl space-y-3 hover:border-white/[0.06] transition-colors">
-                    <div class="flex items-center gap-2">
-                        <i class="devicon-docker-plain colored text-xl"></i>
-                        <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 font-bold">Micro-Containerization</span>
-                    </div>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">Amazon ECS Clusters</span>
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">Elastic Container Registry (ECR)</span>
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">Dockerfiles</span>
-                    </div>
-                </div>
-
-                <div class="p-4 bg-slate-950/40 border border-white/[0.02] rounded-2xl space-y-3 hover:border-white/[0.06] transition-colors">
-                    <div class="flex items-center gap-2">
-                        <i class="devicon-cloudflare-plain colored text-xl"></i>
-                        <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 font-bold">DNS Edge & Gateway Protection</span>
-                    </div>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">Cloudflare Proxy Mappings</span>
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">GoDaddy Systems</span>
-                        <span class="text-[11px] font-mono px-2 py-0.5 rounded tech-tag text-slate-300">Spaceship Architecture</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="bento-card p-6 sm:p-8 rounded-3xl space-y-6 reveal">
-            <div class="border-b border-white/[0.04] pb-4">
-                <h2 class="text-lg font-bold text-white flex items-center gap-2.5 font-sans tracking-tight">
-                    <i class="fa-solid fa-server text-accentCyan text-base"></i> Operational Pipeline Footprint
-                </h2>
-            </div>
-
-            <div class="space-y-8 relative pl-4 border-l border-white/[0.04] ml-2">
-                <div class="relative">
-                    <span class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-accentEmerald ring-4 ring-accentEmerald/20 animate-pulse"></span>
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                        <div>
-                            <h3 class="text-base font-bold text-white">DevOps Infrastructure Engineer</h3>
-                            <p class="text-[11px] text-accentEmerald font-mono tracking-wider uppercase mt-0.5">Biovus Blockchain Technologies Pvt Ltd</p>
-                        </div>
-                        <span class="text-[10px] font-mono font-semibold px-2.5 py-0.5 bg-accentEmerald/10 text-accentEmerald rounded-full border border-accentEmerald/20 self-start sm:self-center">Present • Salem</span>
-                    </div>
-                    <ul class="mt-3.5 space-y-2 text-sm text-slate-400 font-sans">
-                        <li class="flex items-start gap-2.5">
-                            <span class="text-accentEmerald font-mono text-xs mt-0.5">■</span>
-                            <span>Architecting secure cryptographic platform pipelines and scaling internal node availability matrices.</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="relative">
-                    <span class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-slate-700"></span>
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                        <div>
-                            <h3 class="text-base font-bold text-slate-300">Junior DevOps Engineer</h3>
-                            <p class="text-[11px] text-slate-500 font-mono tracking-wider uppercase mt-0.5">Infrastructure Engineering & Automations</p>
-                        </div>
-                        <span class="text-[10px] font-mono font-semibold px-2.5 py-0.5 bg-slate-950 text-slate-500 rounded-full border border-white/[0.04] self-start sm:self-center">July 2025 – July 2026</span>
-                    </div>
-
-                    <ul class="mt-3.5 space-y-2.5 text-sm text-slate-400 font-sans">
-                        <li class="flex items-start gap-2.5">
-                            <span class="text-accentCyan font-mono text-xs mt-0.5">■</span>
-                            <span>Managed system integration workflows provisioning standard deployment tracks via programmatic Jenkins pipelines connected with Bitbucket hooks.</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <span class="text-accentCyan font-mono text-xs mt-0.5">■</span>
-                            <span>Successfully packaged application dependencies into Docker images to serve over Amazon ECS clusters via automated ECR image pulls.</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <span class="text-accentCyan font-mono text-xs mt-0.5">■</span>
-                            <span>Integrated AWS infrastructure mechanisms covering EC2 instance tracking, static asset hosting with Amazon S3, and sub-second network cache tuning via CloudFront.</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <span class="text-accentCyan font-mono text-xs mt-0.5">■</span>
-                            <span>Engineered robust DNS network logic mappings managing routing registers across Route 53 zones, Cloudflare security protections, and registrar domains.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="bento-card p-6 sm:p-8 rounded-3xl space-y-6 reveal">
-            <h2 class="text-lg font-bold text-white flex items-center gap-2.5 font-sans tracking-tight">
-                <i class="fa-solid fa-graduation-cap text-accentCyan text-base"></i> Certifications & Validation Nodes
-            </h2>
-
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div class="p-4 bg-slate-950/40 border border-white/[0.02] rounded-2xl flex items-center gap-3.5 hover:border-white/[0.06] transition-colors">
-                    <div class="w-9 h-9 rounded-xl bg-accentCyan/10 flex items-center justify-center text-accentCyan text-sm"><i class="fa-solid fa-shield-halved"></i></div>
-                    <div>
-                        <h4 class="font-bold text-slate-200 text-xs sm:text-sm">IBM AWS Cloud</h4>
-                        <p class="text-[10px] text-slate-500 font-mono">SLA Academy, Chennai</p>
-                    </div>
-                </div>
-                <div class="p-4 bg-slate-950/40 border border-white/[0.02] rounded-2xl flex items-center gap-3.5 hover:border-white/[0.06] transition-colors">
-                    <div class="w-9 h-9 rounded-xl bg-accentPurple/10 flex items-center justify-center text-accentPurple text-sm"><i class="fa-solid fa-graduation-cap"></i></div>
-                    <div>
-                        <h4 class="font-bold text-slate-200 text-xs sm:text-sm">B.E. (EEE)</h4>
-                        <p class="text-[10px] text-slate-500 font-mono">Engineering Graduate</p>
-                    </div>
-                </div>
-                <div class="p-4 bg-slate-950/40 border border-white/[0.02] rounded-2xl flex items-center gap-3.5 hover:border-white/[0.06] transition-colors">
-                    <div class="w-9 h-9 rounded-xl bg-accentEmerald/10 flex items-center justify-center text-accentEmerald text-sm"><i class="fa-solid fa-network-wired"></i></div>
-                    <div>
-                        <h4 class="font-bold text-slate-200 text-xs sm:text-sm">Diploma (EEE)</h4>
-                        <p class="text-[10px] text-slate-500 font-mono">Technical Education</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer class="reveal pt-4 pb-2 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] font-mono text-slate-500">
-            <span>&copy; <span id="year"></span> M. Prithivraj. Built and deployed with intent.</span>
-            <a href="#top" class="hover:text-accentCyan transition-colors flex items-center gap-1.5">
-                <i class="fa-solid fa-arrow-up"></i> Back to top
-            </a>
-        </footer>
-
+    <div class="flex flex-wrap items-center gap-3 mt-8">
+      <a href="your-resume-url-here.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary">
+        <i class="fa-solid fa-file-arrow-down"></i> Resume
+      </a>
+      <a href="mailto:prithiv6380407352@gmail.com" class="btn-ghost">
+        <i class="fa-solid fa-envelope"></i> Email
+      </a>
+      <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-ghost">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn-ghost">
+        <i class="fa-brands fa-linkedin"></i> LinkedIn
+      </a>
     </div>
 
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+    <div class="flex flex-wrap gap-x-6 gap-y-2 mt-6 mono text-[12px]" style="color:var(--ink-faint);">
+      <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot"></i> Mettur Dam, Tamil Nadu</span>
+      <span class="flex items-center gap-1.5"><i class="fa-solid fa-phone"></i> +91 6380407352</span>
+    </div>
+  </div>
+</header>
 
-        // Scroll-reveal for sections as they enter the viewport
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
+<div class="wrap"><div class="hairline"></div></div>
 
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    </script>
+<section class="wrap py-8 reveal">
+  <div class="flex flex-wrap gap-x-10 gap-y-4">
+    <div>
+      <div class="text-2xl font-semibold mono" style="color:var(--ink);">1+</div>
+      <div class="mono text-[11px] uppercase tracking-wider" style="color:var(--ink-faint);">Years experience</div>
+    </div>
+    <div class="hidden sm:block w-px" style="background:var(--line);"></div>
+    <div>
+      <div class="text-2xl font-semibold mono" style="color:var(--signal);">10+</div>
+      <div class="mono text-[11px] uppercase tracking-wider" style="color:var(--ink-faint);">AWS deployments</div>
+    </div>
+    <div class="hidden sm:block w-px" style="background:var(--line);"></div>
+    <div>
+      <div class="text-2xl font-semibold mono" style="color:var(--ink);">99.9%</div>
+      <div class="mono text-[11px] uppercase tracking-wider" style="color:var(--ink-faint);">SLA availability</div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="hairline"></div></div>
+
+<section class="wrap py-12 reveal">
+  <div class="eyebrow mb-5">Profile</div>
+  <p class="text-[16px] leading-[1.75] max-w-[620px]" style="color:var(--ink);">
+    Proactive and results-driven Junior DevOps Engineer with hands-on experience architecting automated CI/CD pipelines, containerizing microservices, and managing core cloud infrastructure. Proven capability in optimizing application lifecycles using <strong>Jenkins</strong>, while deploying scalable container workflows across <strong>Amazon ECS/ECR</strong>. Distinct proficiency in managing enterprise DNS configurations and high-availability AWS nodes.
+  </p>
+</section>
+
+<div class="wrap"><div class="hairline"></div></div>
+
+<section class="wrap py-12 reveal">
+  <div class="eyebrow mb-6">Stack</div>
+
+  <div class="space-y-7">
+    <div>
+      <div class="mono text-[12px] font-medium mb-2.5" style="color:var(--ink-soft);">Cloud — AWS Core</div>
+      <div class="flex flex-wrap gap-2">
+        <span class="chip">EC2</span><span class="chip">S3</span><span class="chip">CloudFront</span>
+        <span class="chip">Lambda</span><span class="chip">Route 53</span><span class="chip">IAM</span>
+        <span class="chip">CloudWatch</span>
+      </div>
+    </div>
+    <div>
+      <div class="mono text-[12px] font-medium mb-2.5" style="color:var(--ink-soft);">CI/CD Pipelines</div>
+      <div class="flex flex-wrap gap-2">
+        <span class="chip">Jenkins</span><span class="chip">Bitbucket</span><span class="chip">Git Hooks</span>
+      </div>
+    </div>
+    <div>
+      <div class="mono text-[12px] font-medium mb-2.5" style="color:var(--ink-soft);">Containerization</div>
+      <div class="flex flex-wrap gap-2">
+        <span class="chip">Docker</span><span class="chip">Amazon ECS</span><span class="chip">ECR</span>
+      </div>
+    </div>
+    <div>
+      <div class="mono text-[12px] font-medium mb-2.5" style="color:var(--ink-soft);">DNS & Edge</div>
+      <div class="flex flex-wrap gap-2">
+        <span class="chip">Cloudflare</span><span class="chip">Route 53</span><span class="chip">GoDaddy</span>
+        <span class="chip">Spaceship</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="hairline"></div></div>
+
+<section class="wrap py-12 reveal">
+  <div class="eyebrow mb-8">Log — Operational History</div>
+
+  <div class="space-y-8">
+    <div class="log-row">
+      <span class="dot live"></span>
+      <div class="flex flex-wrap items-baseline justify-between gap-2">
+        <h3 class="text-[17px] font-semibold" style="color:var(--ink);">DevOps Infrastructure Engineer</h3>
+        <span class="mono text-[11px] uppercase" style="color:var(--signal);">Active — Present</span>
+      </div>
+      <p class="mono text-[12px] mt-0.5" style="color:var(--ink-faint);">Biovus Blockchain Technologies Pvt Ltd · Salem</p>
+      <p class="text-[14px] leading-relaxed mt-2.5" style="color:var(--ink-soft);">
+        Architecting secure cryptographic platform pipelines and scaling internal node availability matrices.
+      </p>
+    </div>
+
+    <div class="log-row">
+      <span class="dot archived"></span>
+      <div class="flex flex-wrap items-baseline justify-between gap-2">
+        <h3 class="text-[17px] font-semibold" style="color:var(--ink);">Junior DevOps Engineer</h3>
+        <span class="mono text-[11px] uppercase" style="color:var(--ink-faint);">Jul 2025 – Jul 2026</span>
+      </div>
+      <p class="mono text-[12px] mt-0.5" style="color:var(--ink-faint);">Infrastructure Engineering & Automations</p>
+      <ul class="mt-2.5 space-y-2 text-[14px] leading-relaxed" style="color:var(--ink-soft);">
+        <li class="flex gap-2.5"><span class="mono" style="color:var(--signal);">→</span><span>Managed deployment workflows via Jenkins pipelines integrated with Bitbucket hooks.</span></li>
+        <li class="flex gap-2.5"><span class="mono" style="color:var(--signal);">→</span><span>Packaged application dependencies into Docker images served over Amazon ECS via automated ECR pulls.</span></li>
+        <li class="flex gap-2.5"><span class="mono" style="color:var(--signal);">→</span><span>Managed EC2 instances, S3 static hosting, and CloudFront caching for sub-second delivery.</span></li>
+        <li class="flex gap-2.5"><span class="mono" style="color:var(--signal);">→</span><span>Handled DNS routing across Route 53, Cloudflare, and registrar domains.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="hairline"></div></div>
+
+<section class="wrap py-12 reveal">
+  <div class="eyebrow mb-6">Credentials</div>
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+    <div>
+      <div class="mono text-[11px] uppercase tracking-wider mb-1" style="color:var(--signal);">Certification</div>
+      <div class="font-medium text-[15px]" style="color:var(--ink);">IBM AWS Cloud</div>
+      <div class="text-[13px] mt-0.5" style="color:var(--ink-faint);">SLA Academy, Chennai</div>
+    </div>
+    <div>
+      <div class="mono text-[11px] uppercase tracking-wider mb-1" style="color:var(--signal);">Degree</div>
+      <div class="font-medium text-[15px]" style="color:var(--ink);">B.E. (EEE)</div>
+      <div class="text-[13px] mt-0.5" style="color:var(--ink-faint);">Engineering Graduate</div>
+    </div>
+    <div>
+      <div class="mono text-[11px] uppercase tracking-wider mb-1" style="color:var(--signal);">Diploma</div>
+      <div class="font-medium text-[15px]" style="color:var(--ink);">Diploma (EEE)</div>
+      <div class="text-[13px] mt-0.5" style="color:var(--ink-faint);">Technical Education</div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="hairline"></div></div>
+
+<footer class="wrap py-8 flex flex-col sm:flex-row items-center justify-between gap-3 mono text-[11px]" style="color:var(--ink-faint);">
+  <span>&copy; <span id="year"></span> M. Prithivraj</span>
+  <a href="mailto:prithiv6380407352@gmail.com" class="hover:underline" style="color:var(--ink-faint);">prithiv6380407352@gmail.com</a>
+  <a href="#top" style="color:var(--ink-faint);" class="flex items-center gap-1.5">
+    <i class="fa-solid fa-arrow-up"></i> Top
+  </a>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
 
 </body>
 </html>
